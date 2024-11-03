@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
+  m_Name: A Famosa Info
+  m_EditorClassIdentifier: 
+  locationName: A Famosa
+  LocationCoodinates:
+    Latitude: 2.931959
+    Longitude: 101.861613
+    Altitude: 0
+    AltitudeMode: 0
+    Label: 
+  locationDescription: TEST DESCRIPTION
+  videoClipList:
+  - {fileID: 32900000, guid: fba739bee256b5b4990f476a8f1fa180, type: 3}
+  - {fileID: 32900000, guid: 48261c87ec4b0a946a47ee61389b4b5f, type: 3}
+  - {fileID: 32900000, guid: 99ffa757599b62745ae3c5f674201aa7, type: 3}
+  - {fileID: 32900000, guid: cd58120059736e14faab12c6dae7cff6, type: 3}
+  - {fileID: 32900000, guid: 46cf6e5ed74426047baeda6051aa29f7, type: 3}
+  - {fileID: 32900000, guid: 464bd07db6dd0744791ccbf3d3ff3bd4, type: 3}
+  attractionType: 0
+  modelPrefab: {fileID: 7501094968159992568, guid: f36f92f6a7fc5564d8f75f62ad048d19, type: 3}
+  markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}
