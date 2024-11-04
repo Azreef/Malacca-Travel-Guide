@@ -38,9 +38,7 @@ public class CompassScript : MonoBehaviour
 
     IEnumerator Start()
     {
-        //targetLoc.latitude = 2.931927f;
-        //targetLoc.longitude = 101.86182f;
-
+  
         // Check if the user has location service enabled.
         if (!Input.location.isEnabledByUser)
         {

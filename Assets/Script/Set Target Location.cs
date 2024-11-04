@@ -28,16 +28,6 @@ public class SetTargetLocation : MonoBehaviour
             currentTargetInfo = (locationManager.locationList[locationIndex]);
         }
 
-        /*for (int index = 0; index < locationList.Count && !locationFound; index++)
-        {
-            
-            if (locationList[index].label == target.selectedTarget)
-            {
-                currentTargetData = locationList[index].locationData;
-                locationFound = true;
-            }
-        }*/
-
         if (locationFound)
         {
             UIManager.HideAllCanvas();
@@ -49,19 +39,6 @@ public class SetTargetLocation : MonoBehaviour
 
             targetText.SetText(currentTargetInfo.locationName);
 
-
-            /*if (target.selectedTarget == LocationEnum.targetList.AFamosa)
-            {
-                targetText.SetText("A'Famosa Fort");
-            }
-            else if (target.selectedTarget == LocationEnum.targetList.istana)
-            {
-                targetText.SetText("Melaka Sultanate Palace Museum");
-            }
-            else if (target.selectedTarget == LocationEnum.targetList.saintPaulChurch)
-            {
-                targetText.SetText("Church of Saint Paul");
-            }*/
         }
         else
         {
@@ -69,9 +46,12 @@ public class SetTargetLocation : MonoBehaviour
         }
 
 
-        //---------------------------------------- OLD
+        
 
     }
+
+
+    //---------------------------------------- OLD MAPBOX 
 
     /* [SerializeField] public MapboxRoute targetAFamosa;
     [SerializeField] public MapboxRoute targetIstana;

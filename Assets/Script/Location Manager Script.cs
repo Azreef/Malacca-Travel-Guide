@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.Android;
 
 public class LocationManagerScript : MonoBehaviour
 {
@@ -26,6 +26,12 @@ public class LocationManagerScript : MonoBehaviour
 
     void Start()
     {
+        Permission.RequestUserPermission(Permission.FineLocation);
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        {
+            
+        }
+        
         for (int index = 0; index < locationList.Count; index++)
         {
             InitializeLocation(index);
@@ -38,7 +44,7 @@ public class LocationManagerScript : MonoBehaviour
       
         locationList[index].spawnMarker(index);
 
-        UIManager.AddAttractionButton(locationList[index].attractionType, locationList[index].locationName, locationList[index].locationDescription, index);
+        UIManager.AddAttractionButton(locationList[index].attractionType, locationList[index].locationName, locationList[index].locationShortDescription, index);
 
     }
 

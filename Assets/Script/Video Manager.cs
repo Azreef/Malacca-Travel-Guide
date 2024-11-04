@@ -20,7 +20,6 @@ public class VideoManager : MonoBehaviour
 
     private LocationInformation locationInformation;
 
-    
     private List<VideoClip> currentVideoClipList;
     private int currentTrack;
 
@@ -111,17 +110,4 @@ public class VideoManager : MonoBehaviour
         videoPlayer.Stop();
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

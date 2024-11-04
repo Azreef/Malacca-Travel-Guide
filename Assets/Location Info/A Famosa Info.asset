@@ -13,20 +13,30 @@ MonoBehaviour:
   m_Name: A Famosa Info
   m_EditorClassIdentifier: 
   locationName: A Famosa
+  locationShortDescription: Portuguese fortress built in Malacca, Malaysia, circa
+    1512.
   LocationCoodinates:
-    Latitude: 2.931959
-    Longitude: 101.861613
+    Latitude: 2.191827
+    Longitude: 102.250372
     Altitude: 0
     AltitudeMode: 0
     Label: 
-  locationDescription: TEST DESCRIPTION
+  attractionType: 0
+  locationInformationDescription: Portuguese fortress built in Malacca, Malaysia,
+    circa 1512. The oldest part of the fortress was a five-storey keep which eventually
+    gave its name to the fortress as a whole. Some time following the Battle of Malacca
+    (1641) and the occupation of the city by the Dutch, the keep was destroyed but
+    the outer walls of the fortress were expanded. However, in 1811 the British destroyed
+    all of the original fortress and most of the outer walls. The Porta de Santiago
+    gateway, and the rebuilt Middelburg Bastion, are the only parts of the fortress
+    that remain today.
   videoClipList:
   - {fileID: 32900000, guid: fba739bee256b5b4990f476a8f1fa180, type: 3}
   - {fileID: 32900000, guid: 48261c87ec4b0a946a47ee61389b4b5f, type: 3}
-  - {fileID: 32900000, guid: 99ffa757599b62745ae3c5f674201aa7, type: 3}
+  - {fileID: 32900000, guid: 64fdb4726b83cf0449841e22f9513196, type: 3}
   - {fileID: 32900000, guid: cd58120059736e14faab12c6dae7cff6, type: 3}
   - {fileID: 32900000, guid: 46cf6e5ed74426047baeda6051aa29f7, type: 3}
   - {fileID: 32900000, guid: 464bd07db6dd0744791ccbf3d3ff3bd4, type: 3}
-  attractionType: 0
+  locationImage: {fileID: 2800000, guid: 5ff0f9498b676d94981edd0cb5ff1fa1, type: 3}
   modelPrefab: {fileID: 7501094968159992568, guid: f36f92f6a7fc5564d8f75f62ad048d19, type: 3}
   markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

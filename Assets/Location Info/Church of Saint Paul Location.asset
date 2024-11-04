@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
+  m_Name: Church of Saint Paul Location
+  m_EditorClassIdentifier: 
+  locationName: Church of Saint Paul
+  locationShortDescription: Saint Paul's Church is a historic church building in
+    Malacca City, Malaysia, that was originally built from 1566 to 1590.
+  LocationCoodinates:
+    Latitude: 2.192646
+    Longitude: 102.249203
+    Altitude: 6
+    AltitudeMode: 0
+    Label: 
+  attractionType: 0
+  locationInformationDescription: Saint Paul's Church is a historic church building
+    in Malacca City, Malaysia, that was originally built from 1566 to 1590. It is
+    the oldest European building east of India. It is located on the summit of St.
+    Paul's Hill.
+  videoClipList:
+  - {fileID: 32900000, guid: 86166fc16d87f834eb448287209b2e2c, type: 3}
+  - {fileID: 32900000, guid: d5731e55cebddd148b521dea643c9223, type: 3}
+  - {fileID: 32900000, guid: 99ffa757599b62745ae3c5f674201aa7, type: 3}
+  - {fileID: 32900000, guid: c3cb7513703919a459c20fa3763a9a57, type: 3}
+  - {fileID: 32900000, guid: 1132627767f1a3b42b29836b1904dd3e, type: 3}
+  - {fileID: 32900000, guid: 628cafd6659c4144faa7e9a492f00882, type: 3}
+  locationImage: {fileID: 2800000, guid: d0d111e9975d6f24a8c12de4485335e5, type: 3}
+  modelPrefab: {fileID: 5309851157566905966, guid: 5e60ce6100ea10e4d899a9fc7e644e76, type: 3}
+  markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

@@ -11,12 +11,18 @@ public class LocationInformation : ScriptableObject
 
     [Header("Location Data")]
     public string locationName;
+    [Tooltip("This text will be displayed is attraction list")]
+    public string locationShortDescription;
     public ARLocation.Location LocationCoodinates;
     public AttractionType attractionType;
 
     [Header("Location Learning Materials")]
-    public string locationDescription;
+    [Tooltip("This text will be displayed when user is in designated location")]
+    public string locationInformationDescription;
     public List<VideoClip> videoClipList;
+
+    [Tooltip("Recommended size is 360x360")]
+    public Texture2D locationImage;
 
     [Header("Prefabs")]
     public GameObject modelPrefab;
@@ -56,30 +62,10 @@ public class LocationInformation : ScriptableObject
         Camera arCamera;
 
          arCamera = ARLocationManager.Instance.MainCamera;
-        /* var option = new PlaceAtLocation.PlaceAtOptions()
-         {
-             HideObjectUntilItIsPlaced = false,
-             MaxNumberOfLocationUpdates = 2,
-             MovementSmoothing = 0.1f,
-             UseMovingAverage = false
-         };
-
-         placedModel = PlaceAtLocation.CreatePlacedInstance(modelPrefab, modelLocation, option);*/
-
+        
         placedModel = Instantiate(modelPrefab, arLocationRoot.transform);
-        /*Instantiate(modelPrefab
-                   HotspotSettings.Prefab,
-                   HotspotSettings.AlignToCamera ? transform : arLocationRoot);*/
-
+       
         placedModel.name = locationName + " Model";
-
-
-        /*var transform1 = arCamera.transform;
-        var forward = transform1.forward;
-        forward.y = 0;
-        placedModel.transform.position = transform1.position + forward * 5;
-
-        */
 
         var transform1 = arCamera.transform;
         var forward = transform1.forward;

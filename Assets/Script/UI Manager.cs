@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,10 +33,20 @@ public class UIManager : MonoBehaviour
     [Header("On Location Text")]
     public TextMeshProUGUI onLocationText;
 
+    [Header("On Location Buttons")]
+    public GameObject modelButton;
+    public GameObject videoButton;
 
+   
     [Header("Location Information Text")]
     public TextMeshProUGUI locationNameText;
     public TextMeshProUGUI locationDescriptionText;
+
+    [Header("Location Information Image")]
+    public RawImage locationImage;
+    public Texture2D noImage;
+
+
 
 
     public void HideAllCanvas()
@@ -95,7 +106,27 @@ public class UIManager : MonoBehaviour
 
         onLocationText.text = locationInformation.locationName;
         locationNameText.text = locationInformation.locationName;
-        locationDescriptionText.text = locationInformation.locationDescription;
+        locationDescriptionText.text = locationInformation.locationInformationDescription;
+
+        modelButton.SetActive(true);
+        videoButton.SetActive(true);
+
+        if(locationInformation.modelPrefab == null)
+        {
+            modelButton.SetActive(false);
+        }
+
+        if(locationInformation.videoClipList.Count == 0)
+        {
+            videoButton.SetActive(false);
+        }
+
+        locationImage.texture = noImage;
+
+        if(locationInformation.locationImage != null)
+        {
+            locationImage.texture = locationInformation.locationImage;
+        }
 
     }
 
@@ -158,12 +189,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HideAllCanvas();
+        ShowMenuCanvas();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
