@@ -99,6 +99,17 @@ public class LocationManagerScript : MonoBehaviour
 
     }
 
+    private void OnMouseDown()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            hit.transform.gameObject.GetComponent<MarkerScript>().SetNavigation();
+        }
+    }
+
     public LocationInformation GetLocationInfo(int index)
     {
         return locationList[index];

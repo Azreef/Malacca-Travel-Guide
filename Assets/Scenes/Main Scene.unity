@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 42964093}
   - component: {fileID: 42964095}
   - component: {fileID: 42964094}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 81454663}
   - component: {fileID: 81454665}
   - component: {fileID: 81454664}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Video Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 159031477}
   - component: {fileID: 159031476}
   - component: {fileID: 159031475}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Next Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 185039425}
   - component: {fileID: 185039427}
   - component: {fileID: 185039426}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 209514392}
   - component: {fileID: 209514391}
   - component: {fileID: 209514390}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Historical Site Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 227950299}
   - component: {fileID: 227950298}
   - component: {fileID: 227950297}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Attraction Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1441174013}
+  m_Material: {fileID: 2102528086}
   m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 276038523}
   - component: {fileID: 276038522}
   - component: {fileID: 276038521}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Close Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 288122595}
   - component: {fileID: 288122597}
   - component: {fileID: 288122596}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 288198880}
   - component: {fileID: 288198879}
   - component: {fileID: 288198878}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1981,7 +1981,7 @@ GameObject:
   - component: {fileID: 342328374}
   - component: {fileID: 342328373}
   - component: {fileID: 342328372}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: On Location Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,6 +2178,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!21 &386888775
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 925.1255, g: 1192.9141, b: 36, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &489606139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,7 +2229,7 @@ GameObject:
   - component: {fileID: 489606140}
   - component: {fileID: 489606142}
   - component: {fileID: 489606141}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Location Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2324,7 +2364,7 @@ GameObject:
   - component: {fileID: 534030278}
   - component: {fileID: 534030277}
   - component: {fileID: 534030276}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Recreation Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,7 +2520,7 @@ GameObject:
   - component: {fileID: 588280888}
   - component: {fileID: 588280890}
   - component: {fileID: 588280889}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Info Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2613,7 +2653,7 @@ GameObject:
   - component: {fileID: 618386568}
   - component: {fileID: 618386567}
   - component: {fileID: 618386566}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Setting Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2746,7 +2786,7 @@ GameObject:
   - component: {fileID: 632811711}
   - component: {fileID: 632811710}
   - component: {fileID: 632811709}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Tutorial Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2855,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1215565925}
+  m_Material: {fileID: 1275698444}
   m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2893,7 +2933,7 @@ GameObject:
   - component: {fileID: 650648223}
   - component: {fileID: 650648222}
   - component: {fileID: 650648221}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Menu Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3030,7 +3070,7 @@ GameObject:
   - component: {fileID: 694217461}
   - component: {fileID: 694217460}
   - component: {fileID: 694217459}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Info Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3229,7 +3269,7 @@ GameObject:
   - component: {fileID: 729672299}
   - component: {fileID: 729672298}
   - component: {fileID: 729672297}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Gallery Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3328,7 +3368,7 @@ GameObject:
   - component: {fileID: 738065264}
   - component: {fileID: 738065266}
   - component: {fileID: 738065265}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Target Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,46 +3429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738065263}
   m_CullTransparentMesh: 1
---- !u!21 &744928481
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &766550447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3441,7 @@ GameObject:
   - component: {fileID: 766550451}
   - component: {fileID: 766550450}
   - component: {fileID: 766550449}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Show AR Model Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3573,46 +3573,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766550447}
   m_CullTransparentMesh: 1
---- !u!21 &781902943
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 925.1255, g: 1192.9141, b: 36, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &798373143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3585,7 @@ GameObject:
   - component: {fileID: 798373146}
   - component: {fileID: 798373145}
   - component: {fileID: 798373144}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Recreation Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3684,7 @@ GameObject:
   - component: {fileID: 803880511}
   - component: {fileID: 803880513}
   - component: {fileID: 803880512}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Upper Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3800,7 @@ GameObject:
   - component: {fileID: 858772811}
   - component: {fileID: 858772813}
   - component: {fileID: 858772812}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3975,7 +3935,7 @@ GameObject:
   - component: {fileID: 860234499}
   - component: {fileID: 860234498}
   - component: {fileID: 860234497}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Attraction Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4329,7 +4289,7 @@ GameObject:
   - component: {fileID: 872701156}
   - component: {fileID: 872701155}
   - component: {fileID: 872701154}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Content Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4396,7 +4356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 781902943}
+  m_Material: {fileID: 386888775}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4431,7 +4391,7 @@ GameObject:
   - component: {fileID: 907155176}
   - component: {fileID: 907155175}
   - component: {fileID: 907155174}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4587,7 +4547,7 @@ GameObject:
   - component: {fileID: 939456823}
   - component: {fileID: 939456822}
   - component: {fileID: 939456821}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Video Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4730,7 +4690,7 @@ GameObject:
   - component: {fileID: 941468174}
   - component: {fileID: 941468176}
   - component: {fileID: 941468175}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4763,7 @@ GameObject:
   - component: {fileID: 958991338}
   - component: {fileID: 958991337}
   - component: {fileID: 958991336}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: AR Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4906,7 +4866,7 @@ GameObject:
   - component: {fileID: 988180478}
   - component: {fileID: 988180477}
   - component: {fileID: 988180476}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Tour Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +4999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 744928481}
+  m_Material: {fileID: 1355992971}
   m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5076,7 +5036,7 @@ GameObject:
   - component: {fileID: 1028425256}
   - component: {fileID: 1028425258}
   - component: {fileID: 1028425257}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5153,7 +5113,7 @@ GameObject:
   - component: {fileID: 1085379844}
   - component: {fileID: 1085379843}
   - component: {fileID: 1085379842}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Category Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5257,7 +5217,7 @@ GameObject:
   - component: {fileID: 1095151866}
   - component: {fileID: 1095151865}
   - component: {fileID: 1095151864}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Museum Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5413,7 +5373,7 @@ GameObject:
   - component: {fileID: 1115328599}
   - component: {fileID: 1115328601}
   - component: {fileID: 1115328600}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5620,7 +5580,7 @@ GameObject:
   - component: {fileID: 1148440366}
   - component: {fileID: 1148440368}
   - component: {fileID: 1148440367}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Current Location Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5755,7 +5715,7 @@ GameObject:
   - component: {fileID: 1179157298}
   - component: {fileID: 1179157297}
   - component: {fileID: 1179157296}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Historical Site Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5855,7 +5815,7 @@ GameObject:
   - component: {fileID: 1192055103}
   - component: {fileID: 1192055102}
   - component: {fileID: 1192055101}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Museum Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5954,7 +5914,7 @@ GameObject:
   - component: {fileID: 1199850470}
   - component: {fileID: 1199850472}
   - component: {fileID: 1199850471}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6088,7 +6048,7 @@ GameObject:
   - component: {fileID: 1207034120}
   - component: {fileID: 1207034122}
   - component: {fileID: 1207034121}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6222,7 +6182,7 @@ GameObject:
   - component: {fileID: 1208430847}
   - component: {fileID: 1208430849}
   - component: {fileID: 1208430848}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Attraction Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6358,7 +6318,7 @@ GameObject:
   - component: {fileID: 1210270936}
   - component: {fileID: 1210270938}
   - component: {fileID: 1210270937}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6427,46 +6387,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210270935}
   m_CullTransparentMesh: 1
---- !u!21 &1215565925
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1226107651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,7 +6398,7 @@ GameObject:
   - component: {fileID: 1226107652}
   - component: {fileID: 1226107654}
   - component: {fileID: 1226107653}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6613,7 +6533,7 @@ GameObject:
   - component: {fileID: 1250475748}
   - component: {fileID: 1250475747}
   - component: {fileID: 1250475746}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Information Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6745,6 +6665,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250475744}
   m_CullTransparentMesh: 1
+--- !u!21 &1275698444
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1309898622
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,7 +6717,7 @@ GameObject:
   - component: {fileID: 1309898626}
   - component: {fileID: 1309898625}
   - component: {fileID: 1309898624}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Target Direction Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6915,7 +6875,7 @@ GameObject:
   - component: {fileID: 1344608605}
   - component: {fileID: 1344608607}
   - component: {fileID: 1344608606}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6976,6 +6936,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344608604}
   m_CullTransparentMesh: 1
+--- !u!21 &1355992971
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1358120319
 GameObject:
   m_ObjectHideFlags: 0
@@ -6987,7 +6987,7 @@ GameObject:
   - component: {fileID: 1358120320}
   - component: {fileID: 1358120322}
   - component: {fileID: 1358120321}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7121,7 +7121,7 @@ GameObject:
   - component: {fileID: 1392837236}
   - component: {fileID: 1392837238}
   - component: {fileID: 1392837237}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7192,7 +7192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1435084144}
   - component: {fileID: 1435084145}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Video Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7254,46 +7254,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!21 &1441174013
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1471329534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7307,7 +7267,7 @@ GameObject:
   - component: {fileID: 1471329537}
   - component: {fileID: 1471329536}
   - component: {fileID: 1471329539}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: SET PLAYLIST TEST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7451,7 +7411,7 @@ GameObject:
   - component: {fileID: 1595259180}
   - component: {fileID: 1595259182}
   - component: {fileID: 1595259181}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Location Description Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7588,7 +7548,7 @@ GameObject:
   - component: {fileID: 1610589141}
   - component: {fileID: 1610589140}
   - component: {fileID: 1610589139}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7744,7 +7704,7 @@ GameObject:
   - component: {fileID: 1659630068}
   - component: {fileID: 1659630067}
   - component: {fileID: 1659630066}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Close Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7951,7 +7911,7 @@ GameObject:
   - component: {fileID: 1730873583}
   - component: {fileID: 1730873582}
   - component: {fileID: 1730873581}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Gallery Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8108,7 +8068,7 @@ GameObject:
   - component: {fileID: 1745741876}
   - component: {fileID: 1745741875}
   - component: {fileID: 1745741874}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Previous Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8252,7 +8212,7 @@ GameObject:
   - component: {fileID: 1781753538}
   - component: {fileID: 1781753537}
   - component: {fileID: 1781753536}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Pause Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8393,7 +8353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1808943982}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Navigation Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8469,9 +8429,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LocationProviderSettings:
     TimeBetweenUpdates: 2
-    MinDistanceBetweenUpdates: 0
-    AccuracyRadius: 25
-    MaxNumberOfUpdates: 10
+    MinDistanceBetweenUpdates: 1
+    AccuracyRadius: 5
+    MaxNumberOfUpdates: 4
   MockLocationData: {fileID: 11400000, guid: 49bab7398bcbd35489fa30e25d6053ec, type: 2}
   MaxWaitTime: 200
   StartUpDelay: 0
@@ -8526,7 +8486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5e11077e489453a9cbcfff72c5a9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxNumberOfUpdates: 10
+  MaxNumberOfUpdates: 4
   AverageCount: 150
   UseRawUntilFirstAverage: 1
   MovementSmoothingFactor: 0.015
@@ -8551,7 +8511,7 @@ GameObject:
   - component: {fileID: 1889334278}
   - component: {fileID: 1889334277}
   - component: {fileID: 1889334276}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Target Distance Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8643,7 +8603,7 @@ GameObject:
   - component: {fileID: 1896552733}
   - component: {fileID: 1896552732}
   - component: {fileID: 1896552731}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Video Player Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8745,7 +8705,7 @@ GameObject:
   - component: {fileID: 1924593171}
   - component: {fileID: 1924593170}
   - component: {fileID: 1924593169}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Setting Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8876,7 +8836,7 @@ GameObject:
   - component: {fileID: 2015139769}
   - component: {fileID: 2015139771}
   - component: {fileID: 2015139770}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9010,7 +8970,7 @@ GameObject:
   - component: {fileID: 2035978029}
   - component: {fileID: 2035978031}
   - component: {fileID: 2035978030}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9082,7 +9042,7 @@ GameObject:
   - component: {fileID: 2050766409}
   - component: {fileID: 2050766411}
   - component: {fileID: 2050766410}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9154,7 +9114,7 @@ GameObject:
   - component: {fileID: 2061053890}
   - component: {fileID: 2061053892}
   - component: {fileID: 2061053891}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Target Distance Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9288,7 +9248,7 @@ GameObject:
   - component: {fileID: 2064239710}
   - component: {fileID: 2064239712}
   - component: {fileID: 2064239711}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Target Location Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9422,7 +9382,7 @@ GameObject:
   - component: {fileID: 2065101538}
   - component: {fileID: 2065101540}
   - component: {fileID: 2065101539}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9545,6 +9505,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065101537}
   m_CullTransparentMesh: 1
+--- !u!21 &2102528086
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 374.0127, g: 167.346, b: 160, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

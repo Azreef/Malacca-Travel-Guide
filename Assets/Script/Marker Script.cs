@@ -6,12 +6,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
+
 public class MarkerScript : MonoBehaviour
 {
     public string defaultText;
     public TextMeshPro markerText;
     public LocationInformation locationInformation;
     public LocationManagerScript locationManager;
+    public BoxCollider markerCollider;
 
     private int locationIndex;
     private bool triggeredInLocation = false;
@@ -23,7 +26,17 @@ public class MarkerScript : MonoBehaviour
         Debug.Log("New Label:" + markerText.text);
     }
 
-    public void setLocationInfo(int index)
+   
+
+    public void SetNavigation()
+    {
+        locationManager = GameObject.FindWithTag("Manager").GetComponent<LocationManagerScript>();
+
+        locationManager.GetComponent<SetTargetLocation>().setTarget(locationIndex);
+    }
+
+
+    public void SetLocationInfo(int index)
     {
         locationManager = GameObject.FindWithTag("Manager").GetComponent<LocationManagerScript>();
 

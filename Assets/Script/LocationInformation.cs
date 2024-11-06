@@ -24,6 +24,9 @@ public class LocationInformation : ScriptableObject
     [Tooltip("Recommended size is 360x360")]
     public Texture2D locationImage;
 
+    [Header("Location Learning Audio")]
+    public AudioClip locationInformationAudio;
+
     [Header("Prefabs")]
     public GameObject modelPrefab;
     public GameObject markerPrefab;
@@ -47,7 +50,7 @@ public class LocationInformation : ScriptableObject
 
         placedMarker.name = locationName + " Marker";
 
-        markerScript.setLocationInfo(index);
+        markerScript.SetLocationInfo(index);
 
         markerScript.SetMarkerText(locationName);
 
