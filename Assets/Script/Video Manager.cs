@@ -28,23 +28,23 @@ public class VideoManager : MonoBehaviour
     {
         videoPlayer.Stop();
 
-        if (info != null)
+        if (info != null && locationInformation.videoClipList.Count > 0)
         {
             locationInformation = info;
 
             currentVideoClipList = locationInformation.videoClipList;
-            
+
+            currentTrack = 0;
+            videoPlayer.clip = currentVideoClipList[currentTrack];
+
         }
         else
         {
             Debug.LogError("ERROR: Video Not Found");
 
-            return;
         }
          
-        currentTrack = 0;     
-        videoPlayer.clip = currentVideoClipList[currentTrack];
-       
+              
     }
 
 

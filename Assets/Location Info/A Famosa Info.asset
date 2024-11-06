@@ -38,6 +38,6 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 46cf6e5ed74426047baeda6051aa29f7, type: 3}
   - {fileID: 32900000, guid: 464bd07db6dd0744791ccbf3d3ff3bd4, type: 3}
   locationImage: {fileID: 2800000, guid: 5ff0f9498b676d94981edd0cb5ff1fa1, type: 3}
-  locationInformationAudio: {fileID: 0}
+  locationInformationAudio: {fileID: 8300000, guid: 80e9e4ba7a276ac49a537b0e8d68aa15, type: 3}
   modelPrefab: {fileID: 7501094968159992568, guid: f36f92f6a7fc5564d8f75f62ad048d19, type: 3}
   markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

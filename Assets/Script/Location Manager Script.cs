@@ -16,6 +16,7 @@ public class LocationManagerScript : MonoBehaviour
     [Header("Managers")]
     public UIManager UIManager;
     public VideoManager videoManager;
+    public AudioManager audioManager;
     public SetTargetLocation setTarget;
 
     [Header("Debug")]
@@ -27,10 +28,7 @@ public class LocationManagerScript : MonoBehaviour
     void Start()
     {
         Permission.RequestUserPermission(Permission.FineLocation);
-        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-        {
-            
-        }
+       
         
         for (int index = 0; index < locationList.Count; index++)
         {
@@ -38,6 +36,19 @@ public class LocationManagerScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (Input.touchCount > 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                hit.transform.gameObject.GetComponent<MarkerScript>().SetNavigation();
+            }
+        }
+    }
 
     void InitializeLocation(int index)
     {
@@ -63,8 +74,9 @@ public class LocationManagerScript : MonoBehaviour
 
         UIManager.EnterLocationSetUI(locationList[currentLocationIndex]);
 
-        videoManager.SetPlaylist(locationList[currentLocationIndex]);
-        
+        //videoManager.SetPlaylist(locationList[currentLocationIndex]);
+
+        audioManager.SetInfoSound(locationList[currentLocationIndex].locationInformationAudio);
     }
 
     public void ToggleModel()
@@ -96,11 +108,12 @@ public class LocationManagerScript : MonoBehaviour
         UIManager.ExitLocationSetUI();
         videoManager.StopVideo();
 
-
     }
 
-    private void OnMouseDown()
+
+  /*  private void OnMouseDown()
     {
+        Debug.Log("Clicked");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -108,7 +121,7 @@ public class LocationManagerScript : MonoBehaviour
         {
             hit.transform.gameObject.GetComponent<MarkerScript>().SetNavigation();
         }
-    }
+    }*/
 
     public LocationInformation GetLocationInfo(int index)
     {

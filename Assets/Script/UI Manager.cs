@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     [Header("On Location Buttons")]
     public GameObject modelButton;
     public GameObject videoButton;
-
+    public GameObject audioButton;
    
     [Header("Location Information Text")]
     public TextMeshProUGUI locationNameText;
@@ -110,6 +110,7 @@ public class UIManager : MonoBehaviour
 
         modelButton.SetActive(true);
         videoButton.SetActive(true);
+        audioButton.SetActive(true);
 
         if(locationInformation.modelPrefab == null)
         {
@@ -128,6 +129,10 @@ public class UIManager : MonoBehaviour
             locationImage.texture = locationInformation.locationImage;
         }
 
+        if (locationInformation.locationInformationAudio == null)
+        {
+            audioButton.SetActive(false);
+        }
     }
 
     public void ExitLocationSetUI()

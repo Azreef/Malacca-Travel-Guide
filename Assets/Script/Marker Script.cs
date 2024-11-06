@@ -14,16 +14,15 @@ public class MarkerScript : MonoBehaviour
     public TextMeshPro markerText;
     public LocationInformation locationInformation;
     public LocationManagerScript locationManager;
-    public BoxCollider markerCollider;
+    //public BoxCollider markerCollider;
 
     private int locationIndex;
     private bool triggeredInLocation = false;
 
+    public float activationRange = 7f;
     public void SetMarkerText(string inputText)
     {
-        Debug.Log("Label:" + inputText);
-        markerText.text = inputText;
-        Debug.Log("New Label:" + markerText.text);
+        markerText.text = inputText;  
     }
 
    
@@ -52,17 +51,18 @@ public class MarkerScript : MonoBehaviour
         double currentLongitude = Input.location.lastData.longitude;
 
 
+
         double currentDistance = distance(locationInformation.LocationCoodinates.Latitude, locationInformation.LocationCoodinates.Longitude, currentLatitude, currentLongitude);
 
         currentDistance = currentDistance * 1000;
-       if(currentDistance < 10 && !triggeredInLocation)
+       if(currentDistance < activationRange && !triggeredInLocation)
         {
             triggeredInLocation = true;
             locationManager.EnterLocation(locationIndex);
 
 
         }
-       else if (currentDistance >= 10 && triggeredInLocation)
+       else if (currentDistance >= activationRange && triggeredInLocation)
         {
             triggeredInLocation = false;
             locationManager.ExitLocation();

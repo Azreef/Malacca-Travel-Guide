@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1455695178319554262}
   - component: {fileID: 3751344285299140929}
   - component: {fileID: 9042449584808459334}
-  - component: {fileID: 7180111357514309292}
+  - component: {fileID: -6526851917248446229}
   m_Layer: 0
   m_Name: Marker Prefab
   m_TagString: Untagged
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9b996a1f640e945888a947d653df62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7180111357514309292
+--- !u!65 &-6526851917248446229
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,8 +167,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.613495, y: 6.9422817, z: 2.1111553}
-  m_Center: {x: -0.048009515, y: 8.592349, z: -0.06169638}
+  m_Size: {x: 5.1215363, y: 4.7644005, z: 1.2064258}
+  m_Center: {x: -0.029577255, y: 7.122549, z: -0.07280892}
 --- !u!1 &7439419333586583058
 GameObject:
   m_ObjectHideFlags: 0

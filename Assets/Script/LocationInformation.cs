@@ -23,8 +23,6 @@ public class LocationInformation : ScriptableObject
 
     [Tooltip("Recommended size is 360x360")]
     public Texture2D locationImage;
-
-    [Header("Location Learning Audio")]
     public AudioClip locationInformationAudio;
 
     [Header("Prefabs")]
@@ -39,9 +37,9 @@ public class LocationInformation : ScriptableObject
         var option = new PlaceAtLocation.PlaceAtOptions()
         {
             HideObjectUntilItIsPlaced = false,
-            MaxNumberOfLocationUpdates = 10,
-            MovementSmoothing = 10,
-            UseMovingAverage = true
+            //MaxNumberOfLocationUpdates = 10,
+            //MovementSmoothing = 10,
+            //UseMovingAverage = true
         };
 
         placedMarker = PlaceAtLocation.CreatePlacedInstance(markerPrefab, LocationCoodinates, option);
@@ -64,7 +62,7 @@ public class LocationInformation : ScriptableObject
 
         Camera arCamera;
 
-         arCamera = ARLocationManager.Instance.MainCamera;
+        arCamera = ARLocationManager.Instance.MainCamera;
         
         placedModel = Instantiate(modelPrefab, arLocationRoot.transform);
        
