@@ -19,11 +19,11 @@ public class LocationManagerScript : MonoBehaviour
     public AudioManager audioManager;
     public SetTargetLocation setTarget;
 
-    [Header("Debug")]
-    public TextMeshProUGUI debugTextDistance;
+    //[Header("Debug")]
+    //public TextMeshProUGUI debugTextDistance;
 
     private bool isInLocation = false;
-    private int currentLocationIndex;
+    private int currentLocationIndex = -1;
 
     void Start()
     {
@@ -60,23 +60,28 @@ public class LocationManagerScript : MonoBehaviour
     }
 
 
-    public void SetDebugText(double distance)
+   /* public void SetDebugText(double distance)
     {
 
-        debugTextDistance.text= distance.ToString();
+        debugTextDistance.text = distance.ToString();
 
-    }
+    }*/
 
     public void EnterLocation(int index)
     {
         isInLocation = true;
-        currentLocationIndex= index;
+        if(index != currentLocationIndex || !UIManager.onLocationCanvas.isActiveAndEnabled)
+        {
+        
+            currentLocationIndex = index;
 
-        UIManager.EnterLocationSetUI(locationList[currentLocationIndex]);
+            UIManager.EnterLocationSetUI(locationList[currentLocationIndex]);
 
-        //videoManager.SetPlaylist(locationList[currentLocationIndex]);
+            videoManager.SetPlaylist(locationList[currentLocationIndex]);
 
-        audioManager.SetInfoSound(locationList[currentLocationIndex].locationInformationAudio);
+            audioManager.SetInfoSound(locationList[currentLocationIndex].locationInformationAudio);
+        }
+       
     }
 
     public void ToggleModel()
@@ -106,7 +111,9 @@ public class LocationManagerScript : MonoBehaviour
         DestroyModel();
         isInLocation = false;
         UIManager.ExitLocationSetUI();
-        videoManager.StopVideo();
+
+        currentLocationIndex= -1;
+        //videoManager.StopVideo();
 
     }
 

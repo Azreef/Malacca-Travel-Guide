@@ -7,25 +7,27 @@ using TMPro;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using System.Reflection;
 
 public class MarkerScript : MonoBehaviour
 {
+    [Header ("Text")]
     public string defaultText;
     public TextMeshPro markerText;
+
+    [Header("Properties")]
     public LocationInformation locationInformation;
     public LocationManagerScript locationManager;
+    public float activationRange;
     //public BoxCollider markerCollider;
 
     private int locationIndex;
     private bool triggeredInLocation = false;
-
-    public float activationRange = 7f;
+ 
     public void SetMarkerText(string inputText)
     {
         markerText.text = inputText;  
     }
-
-   
 
     public void SetNavigation()
     {
@@ -40,7 +42,8 @@ public class MarkerScript : MonoBehaviour
         locationManager = GameObject.FindWithTag("Manager").GetComponent<LocationManagerScript>();
 
         locationInformation = locationManager.GetLocationInfo(index);
-       
+
+        activationRange = locationInformation.hotspotActivationRange;
 
         locationIndex = index;
     }
@@ -51,27 +54,39 @@ public class MarkerScript : MonoBehaviour
         double currentLongitude = Input.location.lastData.longitude;
 
 
-
         double currentDistance = distance(locationInformation.LocationCoodinates.Latitude, locationInformation.LocationCoodinates.Longitude, currentLatitude, currentLongitude);
 
         currentDistance = currentDistance * 1000;
-       if(currentDistance < activationRange && !triggeredInLocation)
+
+
+        if (currentDistance < activationRange)
         {
             triggeredInLocation = true;
             locationManager.EnterLocation(locationIndex);
-
-
-        }
-       else if (currentDistance >= activationRange && triggeredInLocation)
-        {
-            triggeredInLocation = false;
-            locationManager.ExitLocation();
             
         }
 
+        else if (currentDistance >= activationRange && triggeredInLocation)
+        {
+            triggeredInLocation = false;
+            locationManager.ExitLocation();
 
-        locationManager.SetDebugText(currentDistance);
+        }
+        
+        /* if(currentDistance < activationRange && !triggeredInLocation)
+          {
+              triggeredInLocation = true;
+              locationManager.EnterLocation(locationIndex);
+          }
 
+         else if (currentDistance >= activationRange && triggeredInLocation)
+          {
+              triggeredInLocation = false;
+              locationManager.ExitLocation();
+
+          }*/
+
+        //locationManager.SetDebugText(currentDistance);
     }
 
 

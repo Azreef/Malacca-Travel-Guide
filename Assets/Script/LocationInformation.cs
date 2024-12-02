@@ -1,6 +1,7 @@
 //This script is used to store the location information
 
 using ARLocation;
+using Lean.Touch;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -15,7 +16,8 @@ public class LocationInformation : ScriptableObject
     public string locationShortDescription;
     public ARLocation.Location LocationCoodinates;
     public AttractionType attractionType;
-
+    [Tooltip("How close the user need to be in order to trigger the location hotspot")]
+    public float hotspotActivationRange = 7f;
     [Header("Location Learning Materials")]
     [Tooltip("This text will be displayed when user is in designated location")]
     public string locationInformationDescription;
@@ -76,7 +78,9 @@ public class LocationInformation : ScriptableObject
         var groundHeight = placedModel.AddComponent<GroundHeight>();
         placedModel.transform.LookAt(arCamera.transform);
 
-
+        placedModel.AddComponent<LeanDragTranslate>();
+        placedModel.AddComponent<LeanPinchScale>();
+        placedModel.AddComponent<LeanTwistRotateAxis>();
 
         return placedModel;
 
@@ -84,7 +88,10 @@ public class LocationInformation : ScriptableObject
 
     public void RemoveModel()
     {
-        Destroy(placedModel);
+        if (placedModel != null)
+        {
+            Destroy(placedModel);
+        }  
     }
 
     public GameObject GetPlacedModel()

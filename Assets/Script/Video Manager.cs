@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Video;
+using System.Linq;
 
 public class VideoManager : MonoBehaviour
 {
-
-
     public VideoPlayer videoPlayer;
 
+    [Header("Buttons")]
     public Button playButton;
     public Button pauseButton;
     public Button nextButton;
@@ -26,12 +26,14 @@ public class VideoManager : MonoBehaviour
 
     public void SetPlaylist(LocationInformation info )
     {
-        videoPlayer.Stop();
-
-        if (info != null && locationInformation.videoClipList.Count > 0)
+        if (info != locationInformation || locationInformation == null)
+        {
+            videoPlayer.Stop();
+        }
+            
+        if (info != null && info.videoClipList.Count > 0)
         {
             locationInformation = info;
-
             currentVideoClipList = locationInformation.videoClipList;
 
             currentTrack = 0;
@@ -43,8 +45,7 @@ public class VideoManager : MonoBehaviour
             Debug.LogError("ERROR: Video Not Found");
 
         }
-         
-              
+             
     }
 
 

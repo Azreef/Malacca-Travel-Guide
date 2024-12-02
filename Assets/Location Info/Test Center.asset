@@ -22,8 +22,10 @@ MonoBehaviour:
     Label: 
   attractionType: 3
   locationInformationDescription: Test Kiri Des
-  videoClipList: []
+  videoClipList:
+  - {fileID: 32900000, guid: 86166fc16d87f834eb448287209b2e2c, type: 3}
+  - {fileID: 32900000, guid: fba739bee256b5b4990f476a8f1fa180, type: 3}
   locationImage: {fileID: 2800000, guid: 9dee06e564fa4474fa33a399d9d6e924, type: 3}
-  locationInformationAudio: {fileID: 8300000, guid: e592eedd051b2304b9efb5d04c806ab4, type: 3}
-  modelPrefab: {fileID: 5309851157566905966, guid: 5e60ce6100ea10e4d899a9fc7e644e76, type: 3}
+  locationInformationAudio: {fileID: 8300000, guid: d3b72903991a0bf4c9bf39b4105dc1ba, type: 3}
+  modelPrefab: {fileID: 7501094968159992568, guid: f36f92f6a7fc5564d8f75f62ad048d19, type: 3}
   markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

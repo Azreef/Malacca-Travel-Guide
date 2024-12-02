@@ -44,10 +44,6 @@ public class SetTargetLocation : MonoBehaviour
         {
             Debug.LogError("Location Data Not Found");
         }
-
-
-        
-
     }
 
 

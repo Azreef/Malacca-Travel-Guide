@@ -20,21 +20,26 @@ public class CompassScript : MonoBehaviour
 
     }
 
-    
+    [Header("Arrow Object")]
     [SerializeField]
     public GameObject arrow;
-    public TextMeshProUGUI distanceText;
-    public TextMeshProUGUI debugText;
+    public GameObject arrow3D;
 
+    [Header("Text")]
+    public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI compassDebugText;
 
     float trueNorth = 0;
-    float timeDelay = 1f;
+    float timeDelayTimer = 0f;
+    float timeDelaySet = 0.10f;
+    float compassAcc = 0;
 
-
-    public Coordinate targetLoc;
-    private Coordinate currLoc;
+    [Header("Location Targer")]
+    private Coordinate targetLoc;
+    public Coordinate currLoc;
 
     private float latestAngle;
+    private Quaternion gyroRotation;
 
     IEnumerator Start()
     {
@@ -85,25 +90,36 @@ public class CompassScript : MonoBehaviour
         currLoc.latitude = Input.location.lastData.latitude;
         currLoc.longitude = Input.location.lastData.longitude;
 
+        timeDelayTimer -= Time.deltaTime; //update every 1/4 second - reduces jitter, could average instead? 
 
-        trueNorth = Math.Abs(Input.compass.trueHeading);
+        if (timeDelayTimer < 0)
+        {
+            timeDelayTimer =timeDelaySet; //reset timer
+            trueNorth = Math.Abs(Input.compass.trueHeading);
 
+            //update UI 
+            arrow3D.transform.localEulerAngles = new Vector3(0, -(float)trueNorth, 0);
+            arrow.transform.localEulerAngles = new Vector3(0, 0, (float)trueNorth);
+
+        }
+
+        //gyroRotation = GyroToUnity(Input.gyro.attitude);
+        //trueNorth = Math.Abs(Input.compass.trueHeading);
         //double bearing = getBearing(currLoc, targetLoc);
+        compassAcc = Input.compass.headingAccuracy;
 
         double bearing = CalculateBearing(currLoc.latitude, currLoc.longitude, targetLoc.latitude, targetLoc.longitude);
+
 
         //calculate the offset angle 
         float waypointDir = (float)bearing - trueNorth;
 
         arrow.transform.localEulerAngles = new Vector3(0, 0, -waypointDir);
+        arrow3D.transform.localEulerAngles = new Vector3(0, waypointDir, 0);
 
-        timeDelay -= Time.deltaTime;
-        if (timeDelay < 0)
-        {
-            timeDelay = 0.25f; //reset timer
-        }
-
-        debugText.text = "True North: " + trueNorth + "\n" + "Bearing: " + (float)bearing + "\n" + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude ;
+     
+        compassDebugText.text = "Latitude: " + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n" + "True North: " + trueNorth + "\n" + "Bearing: " + (float)bearing + "\n" + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude + "\n" + "Compass Accuracy: " + compassAcc;
+       
 
         if (distanceText.IsActive())
         {
@@ -212,4 +228,8 @@ public class CompassScript : MonoBehaviour
         Debug.Log("UPDATED LON: " + targetLoc.longitude);
     }
 
+    private static Quaternion GyroToUnity(Quaternion q)
+    {
+        return new Quaternion(q.x, q.y, -q.z, -q.w);
+    }
 }

@@ -44,7 +44,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Location Information Image")]
     public RawImage locationImage;
-    public Texture2D noImage;
+    public RawImage locationImageEnlarged;
+    public Texture2D noImagePlaceholder;
 
 
 
@@ -122,11 +123,13 @@ public class UIManager : MonoBehaviour
             videoButton.SetActive(false);
         }
 
-        locationImage.texture = noImage;
+        locationImage.texture = noImagePlaceholder;
+        locationImageEnlarged.texture = noImagePlaceholder;
 
-        if(locationInformation.locationImage != null)
+        if (locationInformation.locationImage != null)
         {
             locationImage.texture = locationInformation.locationImage;
+            locationImageEnlarged.texture = locationInformation.locationImage;
         }
 
         if (locationInformation.locationInformationAudio == null)
