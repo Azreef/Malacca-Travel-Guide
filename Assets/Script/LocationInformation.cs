@@ -99,8 +99,11 @@ public class LocationInformation : ScriptableObject
         return placedModel;
     }
 
+    public GameObject GetPlacedMarker()
+    { 
+        return placedMarker; 
+    }
    
-
 }
 
 

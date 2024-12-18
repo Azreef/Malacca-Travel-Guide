@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
-  m_Name: Church of Saint Paul Location
+  m_Name: Church of Saint Paul Location alt
   m_EditorClassIdentifier: 
-  locationName: Church of Saint Paul
+  locationName: Church of Saint Paul 1
   locationShortDescription: Saint Paul's Church is a historic church building in
     Malacca City, Malaysia, that was originally built from 1566 to 1590.
   LocationCoodinates:
-    Latitude: 2.192646
-    Longitude: 102.249203
+    Latitude: 5.8109924
+    Longitude: 102.227107
     Altitude: 0
     AltitudeMode: 0
     Label: 

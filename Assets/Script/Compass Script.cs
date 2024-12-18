@@ -38,6 +38,8 @@ public class CompassScript : MonoBehaviour
     private Coordinate targetLoc;
     public Coordinate currLoc;
 
+    private GameObject currentTargetMarker;
+
     private float latestAngle;
     private Quaternion gyroRotation;
 
@@ -98,7 +100,10 @@ public class CompassScript : MonoBehaviour
             trueNorth = Math.Abs(Input.compass.trueHeading);
 
             //update UI 
-            arrow3D.transform.localEulerAngles = new Vector3(0, -(float)trueNorth, 0);
+            //arrow3D.transform.localEulerAngles = new Vector3(0, -(float)trueNorth, 0);
+
+
+
             arrow.transform.localEulerAngles = new Vector3(0, 0, (float)trueNorth);
 
         }
@@ -115,9 +120,20 @@ public class CompassScript : MonoBehaviour
         float waypointDir = (float)bearing - trueNorth;
 
         arrow.transform.localEulerAngles = new Vector3(0, 0, -waypointDir);
-        arrow3D.transform.localEulerAngles = new Vector3(0, waypointDir, 0);
+        // arrow3D.transform.localEulerAngles = new Vector3(0, waypointDir, 0);
 
-     
+        if (currentTargetMarker != null)
+        {
+            //Debug.Log(currentTargetMarker.transform.position);
+
+            Vector3 targetDir = currentTargetMarker.transform.position - Camera.main.transform.position;
+            Quaternion lookDir = Quaternion.LookRotation(targetDir);
+
+            //Vector3 directionVector = (currentTargetMarker.transform.position - new Vector3 (0,0,0).normalized);
+            arrow3D.transform.rotation = lookDir;
+        }
+       
+        
         compassDebugText.text = "Latitude: " + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n" + "True North: " + trueNorth + "\n" + "Bearing: " + (float)bearing + "\n" + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude + "\n" + "Compass Accuracy: " + compassAcc;
        
 
@@ -219,13 +235,17 @@ public class CompassScript : MonoBehaviour
     }
 
 
-    public void SetCompassTarget(Location targetData)
+    public void SetCompassTarget(LocationInformation targetData)
     {
-        targetLoc.latitude = (float)targetData.Latitude;
-        targetLoc.longitude = (float)targetData.Longitude;
+        Location targetCoordinate = targetData.LocationCoodinates;
+
+        targetLoc.latitude = (float)targetCoordinate.Latitude;
+        targetLoc.longitude = (float)targetCoordinate.Longitude;
 
         Debug.Log("UPDATED LA: " + targetLoc.latitude);
         Debug.Log("UPDATED LON: " + targetLoc.longitude);
+
+        currentTargetMarker = targetData.GetPlacedMarker();
     }
 
     private static Quaternion GyroToUnity(Quaternion q)

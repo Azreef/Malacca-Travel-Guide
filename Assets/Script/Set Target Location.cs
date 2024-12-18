@@ -35,7 +35,7 @@ public class SetTargetLocation : MonoBehaviour
             UIManager.ToggleNavigationPanel(true);
 
 
-            compassScript.SetCompassTarget(currentTargetInfo.LocationCoodinates);
+            compassScript.SetCompassTarget(currentTargetInfo);
 
             targetText.SetText(currentTargetInfo.locationName);
 

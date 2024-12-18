@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
-  m_Name: A Famosa Info
+  m_Name: A Famosa Info alt
   m_EditorClassIdentifier: 
   locationName: A Famosa
   locationShortDescription: Portuguese fortress built in Malacca, Malaysia, circa
     1512.
   LocationCoodinates:
-    Latitude: 2.191827
-    Longitude: 102.250372
+    Latitude: 5.8111208
+    Longitude: 102.2271294
     Altitude: 0
     AltitudeMode: 0
     Label: 
