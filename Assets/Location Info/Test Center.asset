@@ -17,10 +17,11 @@ MonoBehaviour:
   LocationCoodinates:
     Latitude: 2.93206
     Longitude: 101.861723
-    Altitude: 0
-    AltitudeMode: 0
+    Altitude: 66
+    AltitudeMode: 2
     Label: 
-  attractionType: 3
+  attractionType: 2
+  hotspotActivationRange: 7
   locationInformationDescription: Test Kiri Des
   videoClipList:
   - {fileID: 32900000, guid: 86166fc16d87f834eb448287209b2e2c, type: 3}

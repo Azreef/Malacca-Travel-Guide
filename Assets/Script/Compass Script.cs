@@ -17,6 +17,7 @@ public class CompassScript : MonoBehaviour
     {
         public float latitude;
         public float longitude;
+        public float altitude;
 
     }
 
@@ -33,6 +34,7 @@ public class CompassScript : MonoBehaviour
     float timeDelayTimer = 0f;
     float timeDelaySet = 0.10f;
     float compassAcc = 0;
+    float horizontalAcc = 0;
 
     [Header("Location Targer")]
     private Coordinate targetLoc;
@@ -91,6 +93,7 @@ public class CompassScript : MonoBehaviour
     {
         currLoc.latitude = Input.location.lastData.latitude;
         currLoc.longitude = Input.location.lastData.longitude;
+        currLoc.altitude = Input.location.lastData.altitude;
 
         timeDelayTimer -= Time.deltaTime; //update every 1/4 second - reduces jitter, could average instead? 
 
@@ -112,6 +115,7 @@ public class CompassScript : MonoBehaviour
         //trueNorth = Math.Abs(Input.compass.trueHeading);
         //double bearing = getBearing(currLoc, targetLoc);
         compassAcc = Input.compass.headingAccuracy;
+        horizontalAcc = Input.location.lastData.horizontalAccuracy;
 
         double bearing = CalculateBearing(currLoc.latitude, currLoc.longitude, targetLoc.latitude, targetLoc.longitude);
 
@@ -132,10 +136,26 @@ public class CompassScript : MonoBehaviour
             //Vector3 directionVector = (currentTargetMarker.transform.position - new Vector3 (0,0,0).normalized);
             arrow3D.transform.rotation = lookDir;
         }
-       
-        
-        compassDebugText.text = "Latitude: " + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n" + "True North: " + trueNorth + "\n" + "Bearing: " + (float)bearing + "\n" + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude + "\n" + "Compass Accuracy: " + compassAcc;
-       
+
+        compassDebugText.text =
+            "DEBUG MODE ENABLED (CAN BE DISABLED AT SETTING)" + "\n"
+            + "Curent Location: " + "\n"
+            + "Altitude: " + currLoc.altitude + " | Latitude:" + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n"
+            + "Target Location: " + "\n"
+            + "Altitude: " + targetLoc.altitude + " | Latitude:" + targetLoc.latitude + " | " + "Longitude: " + targetLoc.longitude + "\n"
+            + "True North: " + trueNorth + "\n"
+            + "Bearing: " + (float)bearing + "\n"
+            + "Compass Accuracy: " + compassAcc + "\n"
+            + "Horizontal Accuracy: " + horizontalAcc;
+
+
+
+/*        "Altitude: " + currLoc.altitude + " | Latitude:" + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n" 
+            + "True North: " + trueNorth + "\n" 
+            + "Bearing: " + (float)bearing + "\n" 
+            + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude + "\n" 
+            + "Compass Accuracy: " + compassAcc;
+       */
 
         if (distanceText.IsActive())
         {
@@ -241,6 +261,7 @@ public class CompassScript : MonoBehaviour
 
         targetLoc.latitude = (float)targetCoordinate.Latitude;
         targetLoc.longitude = (float)targetCoordinate.Longitude;
+        targetLoc.altitude = (float)targetCoordinate.Altitude;
 
         Debug.Log("UPDATED LA: " + targetLoc.latitude);
         Debug.Log("UPDATED LON: " + targetLoc.longitude);

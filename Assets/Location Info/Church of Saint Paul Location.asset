@@ -18,8 +18,8 @@ MonoBehaviour:
   LocationCoodinates:
     Latitude: 2.192646
     Longitude: 102.249203
-    Altitude: 0
-    AltitudeMode: 0
+    Altitude: 6
+    AltitudeMode: 2
     Label: 
   attractionType: 0
   hotspotActivationRange: 7

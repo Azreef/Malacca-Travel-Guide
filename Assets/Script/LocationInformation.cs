@@ -42,6 +42,7 @@ public class LocationInformation : ScriptableObject
             //MaxNumberOfLocationUpdates = 10,
             //MovementSmoothing = 10,
             //UseMovingAverage = true
+
         };
 
         placedMarker = PlaceAtLocation.CreatePlacedInstance(markerPrefab, LocationCoodinates, option);

@@ -18,10 +18,11 @@ MonoBehaviour:
   LocationCoodinates:
     Latitude: 2.1918750720063254
     Longitude: 102.25007537983144
-    Altitude: 0
-    AltitudeMode: 0
+    Altitude: 6
+    AltitudeMode: 2
     Label: 
   attractionType: 0
+  hotspotActivationRange: 7
   locationInformationDescription: Saint Paul's Church is a historic church building
     in Malacca City, Malaysia, that was originally built from 1566 to 1590. It is
     the oldest European building east of India. It is located on the summit of St.

@@ -17,10 +17,11 @@ MonoBehaviour:
   LocationCoodinates:
     Latitude: 2.93197
     Longitude: 101.861603
-    Altitude: 0
-    AltitudeMode: 0
+    Altitude: 66
+    AltitudeMode: 2
     Label: 
-  attractionType: 1
+  attractionType: 2
+  hotspotActivationRange: 7
   locationInformationDescription: Test Depan Des
   videoClipList:
   - {fileID: 32900000, guid: d5731e55cebddd148b521dea643c9223, type: 3}

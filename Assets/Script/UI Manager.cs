@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
     {
         ShowOnLocationCanvas(true);
 
-        onLocationText.text = locationInformation.locationName;
+        onLocationText.text = "Currently at " + locationInformation.locationName;
         locationNameText.text = locationInformation.locationName;
         locationDescriptionText.text = locationInformation.locationInformationDescription;
 

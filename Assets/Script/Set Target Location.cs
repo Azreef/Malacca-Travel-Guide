@@ -37,7 +37,7 @@ public class SetTargetLocation : MonoBehaviour
 
             compassScript.SetCompassTarget(currentTargetInfo);
 
-            targetText.SetText(currentTargetInfo.locationName);
+            targetText.SetText("Current Destination: " + currentTargetInfo.locationName);
 
         }
         else
