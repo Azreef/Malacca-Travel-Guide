@@ -18,7 +18,7 @@ MonoBehaviour:
   LocationCoodinates:
     Latitude: 2.192646
     Longitude: 102.249203
-    Altitude: 6
+    Altitude: 16
     AltitudeMode: 2
     Label: 
   attractionType: 0

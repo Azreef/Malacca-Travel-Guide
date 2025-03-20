@@ -39,16 +39,12 @@ public class LocationInformation : ScriptableObject
         var option = new PlaceAtLocation.PlaceAtOptions()
         {
             HideObjectUntilItIsPlaced = false,
-            //MaxNumberOfLocationUpdates = 10,
-            //MovementSmoothing = 10,
-            //UseMovingAverage = true
-
+          
         };
 
         placedMarker = PlaceAtLocation.CreatePlacedInstance(markerPrefab, LocationCoodinates, option);
         MarkerScript markerScript = placedMarker.GetComponent<MarkerScript>();
-        
-
+      
         placedMarker.name = locationName + " Marker";
 
         markerScript.SetLocationInfo(index);

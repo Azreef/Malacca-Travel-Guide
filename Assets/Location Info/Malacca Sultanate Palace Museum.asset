@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
+  m_Name: Malacca Sultanate Palace Museum
+  m_EditorClassIdentifier: 
+  locationName: Malacca Sultanate Palace Museum
+  locationShortDescription: The Sultanate Palace Museum, is a replica of the 15th-century
+    palace of Sultan Mansur Shah. This museum offers a glimpse into the grandeur
+    of the Melaka Sultanate with its detailed architecture and displays.
+  LocationCoodinates:
+    Latitude: 2.1927142968763174
+    Longitude: 102.25064909691085
+    Altitude: 10
+    AltitudeMode: 2
+    Label: 
+  attractionType: 1
+  hotspotActivationRange: 7
+  locationInformationDescription: The memorial exhibits records and photos of the
+    early era of Malay Sultanate. It also displays the journey of Malaysia from independence
+    and its modern development.
+  videoClipList: []
+  locationImage: {fileID: 2800000, guid: 527642fff32a15240b7e35ed81f0ed91, type: 3}
+  locationInformationAudio: {fileID: 8300000, guid: 80e9e4ba7a276ac49a537b0e8d68aa15, type: 3}
+  modelPrefab: {fileID: 8167396788476612330, guid: df47915199285c44cb2956bf88199c10, type: 3}
+  markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

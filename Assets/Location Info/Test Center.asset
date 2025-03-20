@@ -15,8 +15,8 @@ MonoBehaviour:
   locationName: Center
   locationShortDescription: Center
   LocationCoodinates:
-    Latitude: 2.93206
-    Longitude: 101.861723
+    Latitude: 2.93206003285378
+    Longitude: 101.86172249569705
     Altitude: 66
     AltitudeMode: 2
     Label: 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Navigation
   - Manager
+  - Marker
   layers:
   - Default
   - TransparentFX

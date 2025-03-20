@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.UI;
 
 public class LocationManagerScript : MonoBehaviour
 {
@@ -19,21 +20,17 @@ public class LocationManagerScript : MonoBehaviour
     public AudioManager audioManager;
     public SetTargetLocation setTarget;
 
-    //[Header("Debug")]
-    //public TextMeshProUGUI debugTextDistance;
-
+ 
     private bool isInLocation = false;
     private int currentLocationIndex = -1;
+    private List<GameObject> locationMarkerList = new List<GameObject>();
+    private bool isInitializingLocation = false;
 
     void Start()
     {
         Permission.RequestUserPermission(Permission.FineLocation);
-       
-        
-        for (int index = 0; index < locationList.Count; index++)
-        {
-            InitializeLocation(index);
-        }
+        InitializeLocation();
+
     }
 
     private void FixedUpdate()
@@ -50,23 +47,53 @@ public class LocationManagerScript : MonoBehaviour
         }
     }
 
-    void InitializeLocation(int index)
+    void InitializeLocation()
     {
-      
-        locationList[index].spawnMarker(index);
+ 
+        Debug.Log("Initializing Location");
+        for (int index = 0; index < locationList.Count; index++)
+        {
+            GameObject placedMarker = locationList[index].spawnMarker(index);
+            locationMarkerList.Add(placedMarker);
 
-        UIManager.AddAttractionButton(locationList[index].attractionType, locationList[index].locationName, locationList[index].locationShortDescription, index);
+            UIManager.AddAttractionButton(locationList[index].attractionType, locationList[index].locationName, locationList[index].locationShortDescription, locationList[index].locationImage, index);
 
+            Debug.Log("Created " + locationMarkerList[index].name);
+        }
+
+        isInitializingLocation = false;
     }
 
 
-   /* public void SetDebugText(double distance)
+    public void ResetLocation()
     {
+        Debug.Log("Resetting Location");
 
-        debugTextDistance.text = distance.ToString();
+        UIManager.RemoveAllAttractionButton();
+        UIManager.ExitLocationSetUI();
+        UIManager.ToggleNavigationPanel(false);
 
-    }*/
+        if (locationList[currentLocationIndex].GetPlacedModel() != null)
+        {
+            locationList[currentLocationIndex].RemoveModel();
+        }
 
+        for (int index = 0; index < locationMarkerList.Count; index++)
+        {
+            Debug.Log("Destroyed " + locationMarkerList[index].name);
+            Destroy(locationMarkerList[index]);
+            
+        }
+        locationMarkerList.Clear();
+        
+        if (!isInitializingLocation) 
+        {
+            isInitializingLocation = true;
+            Invoke("InitializeLocation", 3f);
+        }
+        
+    }    
+ 
     public void EnterLocation(int index)
     {
         isInLocation = true;
@@ -113,11 +140,10 @@ public class LocationManagerScript : MonoBehaviour
         UIManager.ExitLocationSetUI();
 
         currentLocationIndex= -1;
-        //videoManager.StopVideo();
 
     }
 
-
+    //DEBUGGING CLICK
   /*  private void OnMouseDown()
     {
         Debug.Log("Clicked");

@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     public RawImage locationImageEnlarged;
     public Texture2D noImagePlaceholder;
 
-
+    private List<GameObject> attractionButtonList = new List<GameObject>();
 
 
     public void HideAllCanvas()
@@ -155,7 +155,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AddAttractionButton(AttractionType locationType ,string locationName, string locationDescription, int locationIndex)
+    public void AddAttractionButton(AttractionType locationType ,string locationName, string locationDescription, Texture2D locationImage, int locationIndex)
     {
         GameObject newButton;
         newButton = Instantiate(attractionButtonTemplate);
@@ -180,10 +180,22 @@ public class UIManager : MonoBehaviour
 
         newButton.GetComponent<AttractionButtonScript>().setLocationName(locationName);
         newButton.GetComponent<AttractionButtonScript>().setLocationDescription(locationDescription);
-
+        newButton.GetComponent<AttractionButtonScript>().setLocationImage(locationImage);
         newButton.GetComponent<AttractionButtonScript>().setLocationIndex(locationIndex);
         newButton.name = locationName + " Button";
 
+        attractionButtonList.Add(newButton);
+    }
+
+    public void RemoveAllAttractionButton()
+    {
+        for(int index = 0; index < attractionButtonList.Count; index++) 
+        {
+            Destroy(attractionButtonList[index]);
+        
+        }
+
+        attractionButtonList.Clear();
     }
 
     public void HideAttractionPanelCategory()
@@ -194,7 +206,6 @@ public class UIManager : MonoBehaviour
         recreationPanel.gameObject.SetActive(false);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         HideAllCanvas();

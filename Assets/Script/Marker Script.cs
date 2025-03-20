@@ -1,13 +1,7 @@
 //This script is used to set marker's properties. It is also used to detect if player is currently in a location zone.
-
-using ARLocation;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using System.Reflection;
 
 public class MarkerScript : MonoBehaviour
 {
@@ -19,7 +13,7 @@ public class MarkerScript : MonoBehaviour
     public LocationInformation locationInformation;
     public LocationManagerScript locationManager;
     public float activationRange;
-    //public BoxCollider markerCollider;
+  
 
     private int locationIndex;
     private bool triggeredInLocation = false;
@@ -73,20 +67,7 @@ public class MarkerScript : MonoBehaviour
 
         }
         
-        /* if(currentDistance < activationRange && !triggeredInLocation)
-          {
-              triggeredInLocation = true;
-              locationManager.EnterLocation(locationIndex);
-          }
-
-         else if (currentDistance >= activationRange && triggeredInLocation)
-          {
-              triggeredInLocation = false;
-              locationManager.ExitLocation();
-
-          }*/
-
-        //locationManager.SetDebugText(currentDistance);
+        
     }
 
 
@@ -104,17 +85,17 @@ public class MarkerScript : MonoBehaviour
         return (dist);
     }
 
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    //::  This function converts decimal degrees to radians             :::
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    
+    //This function converts decimal degrees to radians
+   
     private double deg2rad(double deg)
     {
         return (deg * Math.PI / 180.0);
     }
 
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    //::  This function converts radians to decimal degrees             :::
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    
+    //This function converts radians to decimal degrees
+    
     private double rad2deg(double rad)
     {
         return (rad / Math.PI * 180.0);

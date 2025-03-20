@@ -15,8 +15,8 @@ MonoBehaviour:
   locationName: Depan
   locationShortDescription: Test
   LocationCoodinates:
-    Latitude: 2.93197
-    Longitude: 101.861603
+    Latitude: 2.931976323548067
+    Longitude: 101.86159911408006
     Altitude: 66
     AltitudeMode: 2
     Label: 

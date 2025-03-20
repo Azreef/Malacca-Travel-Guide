@@ -119,7 +119,7 @@ namespace ARLocation
 #endif
 
             SessionManager.DebugMode = DebugMode;
-
+            
             SessionManager.OnARTrackingStarted(ARTrackingStartedCallback);
             SessionManager.OnARTrackingRestored(ARTrackingRestoredCallback);
             SessionManager.OnARTrackingLost(ARTrackingLostCallback);
@@ -160,9 +160,11 @@ namespace ARLocation
         {
             Logger.LogFromMethod("ARLocationManager", "ARTrackingStartedCallback", "'OnARTrackingStarted' event received.", DebugMode);
 
+            
             if (WaitForARTrackingToStart)
             {
                 arLocationProvider.Unmute();
+            
             }
 
             OnTrackingStarted?.Invoke();
@@ -192,6 +194,7 @@ namespace ARLocation
         {
             Logger.LogFromMethod("ARLocationManager", "Restart", "Resetting AR+GPS location...", DebugMode);
 
+            
             arLocationOrientation.Restart();
             arLocationProvider.Restart();
 

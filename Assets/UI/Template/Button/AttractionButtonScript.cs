@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttractionButtonScript : MonoBehaviour
 {
     public TextMeshProUGUI locationNameText;
     public TextMeshProUGUI rotationDescriptionText;
-
+    public RawImage locationImageFrame;
     private int locationIndex;
     public SetTargetLocation setTargetManager;
 
@@ -25,6 +26,10 @@ public class AttractionButtonScript : MonoBehaviour
         rotationDescriptionText.text = description;
     }
 
+    public void setLocationImage(Texture2D locationImage)
+    {
+        locationImageFrame.texture = locationImage;
+    }
     public void setLocationIndex(int index)
     {
         locationIndex = index;

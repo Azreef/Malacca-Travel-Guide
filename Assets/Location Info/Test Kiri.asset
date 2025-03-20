@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
   m_Name: Test Kiri
   m_EditorClassIdentifier: 
-  locationName: Kiri
+  locationName: Proclamation of Independence Memorial
   locationShortDescription: Test
   LocationCoodinates:
-    Latitude: 2.931959
-    Longitude: 101.861857
+    Latitude: 2.931932794707707
+    Longitude: 101.86184051288909
     Altitude: 66
     AltitudeMode: 2
     Label: 

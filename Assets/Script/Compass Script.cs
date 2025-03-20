@@ -1,13 +1,11 @@
 // This script is used when player tries to find a location using attraction. This script calculate direction and distance to the target location
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.Video;
-using UnityEngine.UIElements.Experimental;
 using ARLocation;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class CompassScript : MonoBehaviour
@@ -45,15 +43,17 @@ public class CompassScript : MonoBehaviour
     private float latestAngle;
     private Quaternion gyroRotation;
 
+
+
     IEnumerator Start()
     {
   
         // Check if the user has location service enabled.
         if (!Input.location.isEnabledByUser)
         {
-            //Debug.Log("Location not enabled on device or app does not have permission to access location");
-           
+            Debug.Log("Location not enabled on device or app does not have permission to access location");
         }
+
         // Starts the location service.
         Input.location.Start();
         Input.compass.enabled = true;
@@ -66,26 +66,15 @@ public class CompassScript : MonoBehaviour
             yield return new WaitForSeconds(1);
             maxWait--;
         }
-
-        // If the service didn't initialize in 20 seconds this cancels location service use.
-        if (maxWait < 1)
-        {  
-            //yield break;
-        }
-
+     
         // If the connection failed this cancels location service use.
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-           // Debug.LogError("Unable to determine device location");
+           Debug.LogError("Unable to determine device location");
           
-            //yield break;
+            yield break;
         }
-        else
-        {
-            // If the connection succeeded, this retrieves the device's current location and displays it in the Console window.
-            //Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-            
-        }
+     
     }
 
     // Update is called once per frame
@@ -95,25 +84,19 @@ public class CompassScript : MonoBehaviour
         currLoc.longitude = Input.location.lastData.longitude;
         currLoc.altitude = Input.location.lastData.altitude;
 
-        timeDelayTimer -= Time.deltaTime; //update every 1/4 second - reduces jitter, could average instead? 
+        timeDelayTimer -= Time.deltaTime; 
 
         if (timeDelayTimer < 0)
         {
             timeDelayTimer =timeDelaySet; //reset timer
             trueNorth = Math.Abs(Input.compass.trueHeading);
 
-            //update UI 
-            //arrow3D.transform.localEulerAngles = new Vector3(0, -(float)trueNorth, 0);
-
-
-
+    
             arrow.transform.localEulerAngles = new Vector3(0, 0, (float)trueNorth);
 
         }
 
-        //gyroRotation = GyroToUnity(Input.gyro.attitude);
-        //trueNorth = Math.Abs(Input.compass.trueHeading);
-        //double bearing = getBearing(currLoc, targetLoc);
+      
         compassAcc = Input.compass.headingAccuracy;
         horizontalAcc = Input.location.lastData.horizontalAccuracy;
 
@@ -124,19 +107,23 @@ public class CompassScript : MonoBehaviour
         float waypointDir = (float)bearing - trueNorth;
 
         arrow.transform.localEulerAngles = new Vector3(0, 0, -waypointDir);
-        // arrow3D.transform.localEulerAngles = new Vector3(0, waypointDir, 0);
+       
 
-        if (currentTargetMarker != null)
+        if (currentTargetMarker != null) 
         {
-            //Debug.Log(currentTargetMarker.transform.position);
 
-            Vector3 targetDir = currentTargetMarker.transform.position - Camera.main.transform.position;
-            Quaternion lookDir = Quaternion.LookRotation(targetDir);
+            Vector3 direction = currentTargetMarker.transform.position - Camera.main.transform.position;
+            direction.y = 0f; // Ignore vertical difference
 
-            //Vector3 directionVector = (currentTargetMarker.transform.position - new Vector3 (0,0,0).normalized);
-            arrow3D.transform.rotation = lookDir;
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                arrow3D.transform.rotation = Quaternion.Euler(-35f, targetRotation.eulerAngles.y, 0f);
+            }
+
         }
 
+        //Text for Debugging
         compassDebugText.text =
             "DEBUG MODE ENABLED (CAN BE DISABLED AT SETTING)" + "\n"
             + "Curent Location: " + "\n"
@@ -148,14 +135,6 @@ public class CompassScript : MonoBehaviour
             + "Compass Accuracy: " + compassAcc + "\n"
             + "Horizontal Accuracy: " + horizontalAcc;
 
-
-
-/*        "Altitude: " + currLoc.altitude + " | Latitude:" + currLoc.latitude + " | " + "Longitude: " + currLoc.longitude + "\n" 
-            + "True North: " + trueNorth + "\n" 
-            + "Bearing: " + (float)bearing + "\n" 
-            + "Current Target: " + targetLoc.latitude + " | " + targetLoc.longitude + "\n" 
-            + "Compass Accuracy: " + compassAcc;
-       */
 
         if (distanceText.IsActive())
         {
@@ -238,17 +217,15 @@ public class CompassScript : MonoBehaviour
         return (dist);
     }
 
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    //::  This function converts decimal degrees to radians             :::
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    
+    //This function converts decimal degrees to radians            
     private double deg2rad(double deg)
     {
         return (deg * Math.PI / 180.0);
     }
 
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    //::  This function converts radians to decimal degrees             :::
-    //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    
+    //This function converts radians to decimal degrees           
     private double rad2deg(double rad)
     {
         return (rad / Math.PI * 180.0);
