@@ -1,6 +1,7 @@
 //This script act as a main manager, responsible for storing list of location information and keeping track of user's current location.
 
 using ARLocation;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,7 +21,8 @@ public class LocationManagerScript : MonoBehaviour
     public AudioManager audioManager;
     public SetTargetLocation setTarget;
 
- 
+
+    private bool isMarkerCurrentlyEnabled = true;
     private bool isInLocation = false;
     private int currentLocationIndex = -1;
     private List<GameObject> locationMarkerList = new List<GameObject>();
@@ -99,7 +101,6 @@ public class LocationManagerScript : MonoBehaviour
         isInLocation = true;
         if(index != currentLocationIndex || !UIManager.onLocationCanvas.isActiveAndEnabled)
         {
-        
             currentLocationIndex = index;
 
             UIManager.EnterLocationSetUI(locationList[currentLocationIndex]);
@@ -107,8 +108,22 @@ public class LocationManagerScript : MonoBehaviour
             videoManager.SetPlaylist(locationList[currentLocationIndex]);
 
             audioManager.SetInfoSound(locationList[currentLocationIndex].locationInformationAudio);
+
+            if (locationList[currentLocationIndex].disableThisMarkerOnEnter)
+            {
+                ToggleLocationMarker(index, false);
+
+            }
+
+            if (locationList[currentLocationIndex].disableOtherMarkerOnEnter)
+            {
+                ToggleLocationMarker(false);
+            }
+
+            Debug.Log("ENTER TRIGGERED");
         }
-       
+
+  
     }
 
     public void ToggleModel()
@@ -138,27 +153,81 @@ public class LocationManagerScript : MonoBehaviour
         DestroyModel();
         isInLocation = false;
         UIManager.ExitLocationSetUI();
+        ToggleLocationMarker(true);
 
-        currentLocationIndex= -1;
+        Debug.Log("EXIT TRIGGERED");
+
+        currentLocationIndex = -1;
 
     }
-
-    //DEBUGGING CLICK
-  /*  private void OnMouseDown()
-    {
-        Debug.Log("Clicked");
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 1000))
-        {
-            hit.transform.gameObject.GetComponent<MarkerScript>().SetNavigation();
-        }
-    }*/
 
     public LocationInformation GetLocationInfo(int index)
     {
         return locationList[index];
     }
+
+
+    public void ToggleLocationMarker(bool isMarkerEnabled)
+    {
+        for (int index = 0; index < locationMarkerList.Count; index++)
+        {
+            SetModelRenderer(locationMarkerList[index], isMarkerCurrentlyEnabled);
+            //locationMarkerList[index].SetActive(isMarkerEnabled);
+        }
+
+        isMarkerCurrentlyEnabled = isMarkerEnabled;
+        UIManager.ToggleMarkerIcon(isMarkerEnabled);
+
+        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+    }
+
+    public void ToggleLocationMarker(int locationMarkerIndex, bool isMarkerEnabled)
+    {
+        SetModelRenderer(locationMarkerList[locationMarkerIndex], isMarkerCurrentlyEnabled);
+        //locationMarkerList[locationMarkerIndex].SetActive(isMarkerEnabled);
+
+        isMarkerCurrentlyEnabled = isMarkerEnabled;
+        UIManager.ToggleMarkerIcon(isMarkerEnabled);
+
+        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+    }
+
+    public void ToggleLocationMarker()
+    {
+        isMarkerCurrentlyEnabled = !isMarkerCurrentlyEnabled;
+        
+        for (int index = 0; index < locationMarkerList.Count; index++)
+        {
+
+            SetModelRenderer(locationMarkerList[index], isMarkerCurrentlyEnabled);
+            //locationMarkerList[index].SetActive(isMarkerCurrentlyEnabled);
+        }
+
+        UIManager.ToggleMarkerIcon(isMarkerCurrentlyEnabled);
+
+        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+
+    }
+
+    public void SetModelRenderer(GameObject model, bool isEnabled)
+    {
+        foreach (Transform child in model.transform)
+        {
+            child.gameObject.GetComponent<Renderer>().enabled = isEnabled;
+        }
+    }
+
+    //DEBUGGING CLICK
+    /*  private void OnMouseDown()
+      {
+          Debug.Log("Clicked");
+          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+          RaycastHit hit;
+
+          if (Physics.Raycast(ray, out hit, 1000))
+          {
+              hit.transform.gameObject.GetComponent<MarkerScript>().SetNavigation();
+          }
+      }*/
 
 }

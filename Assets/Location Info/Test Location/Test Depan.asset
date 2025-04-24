@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bb296464044a142bd615f0393cd196, type: 3}
-  m_Name: Test Kiri
+  m_Name: Test Depan
   m_EditorClassIdentifier: 
-  locationName: Proclamation of Independence Memorial
+  locationName: Depan
   locationShortDescription: Test
   LocationCoodinates:
-    Latitude: 2.931932794707707
-    Longitude: 101.86184051288909
+    Latitude: 2.931976323548067
+    Longitude: 101.86159911408006
     Altitude: 66
     AltitudeMode: 2
     Label: 
-  attractionType: 2
+  attractionType: 0
   hotspotActivationRange: 7
-  locationInformationDescription: Test Kiri Des
+  disableOtherMarkerOnEnter: 0
+  disableThisMarkerOnEnter: 1
+  locationInformationDescription: Test Depan Des
   videoClipList:
-  - {fileID: 32900000, guid: 64fdb4726b83cf0449841e22f9513196, type: 3}
-  - {fileID: 32900000, guid: cd58120059736e14faab12c6dae7cff6, type: 3}
+  - {fileID: 32900000, guid: d5731e55cebddd148b521dea643c9223, type: 3}
+  - {fileID: 32900000, guid: c3cb7513703919a459c20fa3763a9a57, type: 3}
   locationImage: {fileID: 2800000, guid: 9dee06e564fa4474fa33a399d9d6e924, type: 3}
-  locationInformationAudio: {fileID: 8300000, guid: e592eedd051b2304b9efb5d04c806ab4, type: 3}
-  modelPrefab: {fileID: 8167396788476612330, guid: df47915199285c44cb2956bf88199c10, type: 3}
+  locationInformationAudio: {fileID: 8300000, guid: 415c6044ebada0441a52a09533128d07, type: 3}
+  modelPrefab: {fileID: 5309851157566905966, guid: 5e60ce6100ea10e4d899a9fc7e644e76, type: 3}
   markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}

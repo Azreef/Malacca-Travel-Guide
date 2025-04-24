@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     [Header("Panels")]
     public GameObject navigationPanel;
 
-    [Header("Attraction Panel")]
+    [Header("Attraction Panel Content")]
     public GameObject historicalPanel;
     public GameObject museumPanel;
     public GameObject galleryPanel;
@@ -37,7 +37,8 @@ public class UIManager : MonoBehaviour
     public GameObject modelButton;
     public GameObject videoButton;
     public GameObject audioButton;
-   
+    public GameObject toggleMarkerButton;
+
     [Header("Location Information Text")]
     public TextMeshProUGUI locationNameText;
     public TextMeshProUGUI locationDescriptionText;
@@ -46,6 +47,10 @@ public class UIManager : MonoBehaviour
     public RawImage locationImage;
     public RawImage locationImageEnlarged;
     public Texture2D noImagePlaceholder;
+
+    [Header("Icons")]
+    public Sprite markerEnabledIcon;
+    public Sprite markerDisabledIcon;
 
     private List<GameObject> attractionButtonList = new List<GameObject>();
 
@@ -200,10 +205,24 @@ public class UIManager : MonoBehaviour
 
     public void HideAttractionPanelCategory()
     {
-        historicalPanel.gameObject.SetActive(false);
-        museumPanel.gameObject.SetActive(false);
-        galleryPanel.gameObject.SetActive(false);
-        recreationPanel.gameObject.SetActive(false);
+        historicalPanel.transform.parent.gameObject.SetActive(false);
+        historicalPanel.transform.parent.gameObject.SetActive(false);
+        museumPanel.transform.parent.gameObject.SetActive(false);
+        galleryPanel.transform.parent.gameObject.SetActive(false);
+        recreationPanel.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void ToggleMarkerIcon(bool isMarkerEnabled)
+    {
+        if(isMarkerEnabled)
+        {
+            toggleMarkerButton.GetComponent<Button>().image.sprite = markerEnabledIcon;
+        }
+        else if(!isMarkerEnabled)
+        {
+            toggleMarkerButton.GetComponent<Button>().image.sprite = markerDisabledIcon;
+        }
+        
     }
 
     void Start()

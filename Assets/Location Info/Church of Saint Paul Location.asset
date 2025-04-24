@@ -23,6 +23,8 @@ MonoBehaviour:
     Label: 
   attractionType: 0
   hotspotActivationRange: 7
+  disableOtherMarkerOnEnter: 1
+  disableThisMarkerOnEnter: 1
   locationInformationDescription: Saint Paul's Church is a historic church building
     in Malacca City, Malaysia, that was originally built from 1566 to 1590. It is
     the oldest European building east of India. It is located on the summit of St.

@@ -20,8 +20,10 @@ MonoBehaviour:
     Altitude: 66
     AltitudeMode: 2
     Label: 
-  attractionType: 2
+  attractionType: 0
   hotspotActivationRange: 7
+  disableOtherMarkerOnEnter: 0
+  disableThisMarkerOnEnter: 1
   locationInformationDescription: Test Kiri Des
   videoClipList:
   - {fileID: 32900000, guid: 86166fc16d87f834eb448287209b2e2c, type: 3}

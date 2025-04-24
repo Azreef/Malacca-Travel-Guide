@@ -18,6 +18,11 @@ public class LocationInformation : ScriptableObject
     public AttractionType attractionType;
     [Tooltip("How close the user need to be in order to trigger the location hotspot")]
     public float hotspotActivationRange = 7f;
+
+    [Tooltip("Disable other marker when user enter this location")]
+    public bool disableOtherMarkerOnEnter = false;
+    public bool disableThisMarkerOnEnter = true;
+
     [Header("Location Learning Materials")]
     [Tooltip("This text will be displayed when user is in designated location")]
     public string locationInformationDescription;
