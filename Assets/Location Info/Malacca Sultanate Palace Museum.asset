@@ -17,14 +17,14 @@ MonoBehaviour:
     palace of Sultan Mansur Shah. This museum offers a glimpse into the grandeur
     of the Melaka Sultanate with its detailed architecture and displays.
   LocationCoodinates:
-    Latitude: 2.1927142968763174
-    Longitude: 102.25064909691085
+    Latitude: 2.192202
+    Longitude: 102.2504573
     Altitude: 10
     AltitudeMode: 2
     Label: 
   attractionType: 0
   hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 0
+  disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: The memorial exhibits records and photos of the
     early era of Malay Sultanate. It also displays the journey of Malaysia from independence

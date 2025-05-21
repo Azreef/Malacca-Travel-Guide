@@ -16,7 +16,7 @@ public class MarkerScript : MonoBehaviour
   
 
     private int locationIndex;
-    private bool triggeredInLocation = false;
+    //private bool triggeredInLocation = false;
  
     public void SetMarkerText(string inputText)
     {
@@ -47,29 +47,28 @@ public class MarkerScript : MonoBehaviour
         double currentLatitude = Input.location.lastData.latitude;
         double currentLongitude = Input.location.lastData.longitude;
 
-
         double currentDistance = distance(locationInformation.LocationCoodinates.Latitude, locationInformation.LocationCoodinates.Longitude, currentLatitude, currentLongitude);
 
         currentDistance = currentDistance * 1000;
 
 
-        if (currentDistance < activationRange)
+        if (currentDistance < activationRange && (locationManager.currentLocationIndex != locationIndex))
         {
-            triggeredInLocation = true;
+            //Debug.Log()
+            //triggeredInLocation = true;
             locationManager.EnterLocation(locationIndex);
-            
+            //Debug.Log("TRIGGER ENTER: " + markerText.text);
+
         }
 
-        else if (currentDistance >= activationRange && triggeredInLocation)
+        else if (currentDistance >= activationRange && (locationManager.currentLocationIndex == locationIndex))
         {
-            triggeredInLocation = false;
+           // triggeredInLocation = false;
             locationManager.ExitLocation();
-
+            //Debug.Log("TRIGGER EXIT: " + markerText.text);
         }
-        
         
     }
-
 
     private double distance(double lat1, double lon1, double lat2, double lon2)
     {

@@ -22,7 +22,7 @@ MonoBehaviour:
     Label: 
   attractionType: 0
   hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 0
+  disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: Test Depan Des
   videoClipList:

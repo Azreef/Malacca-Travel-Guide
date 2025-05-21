@@ -23,8 +23,8 @@ public class LocationManagerScript : MonoBehaviour
 
 
     private bool isMarkerCurrentlyEnabled = true;
-    private bool isInLocation = false;
-    private int currentLocationIndex = -1;
+    public bool isInLocation = false;
+    public int currentLocationIndex = -1;
     private List<GameObject> locationMarkerList = new List<GameObject>();
     private bool isInitializingLocation = false;
 
@@ -112,7 +112,6 @@ public class LocationManagerScript : MonoBehaviour
             if (locationList[currentLocationIndex].disableThisMarkerOnEnter)
             {
                 ToggleLocationMarker(index, false);
-
             }
 
             if (locationList[currentLocationIndex].disableOtherMarkerOnEnter)
@@ -120,12 +119,25 @@ public class LocationManagerScript : MonoBehaviour
                 ToggleLocationMarker(false);
             }
 
-            Debug.Log("ENTER TRIGGERED");
+           // Debug.Log("ENTER TRIGGERED");
         }
 
   
     }
 
+    public void ExitLocation()
+    {
+
+        DestroyModel();
+        isInLocation = false;
+        UIManager.ExitLocationSetUI();
+        ToggleLocationMarker(true);
+
+       // Debug.Log("EXIT TRIGGERED");
+
+        currentLocationIndex = -1;
+
+    }
     public void ToggleModel()
     {
         if (locationList[currentLocationIndex].GetPlacedModel() == null)
@@ -147,20 +159,7 @@ public class LocationManagerScript : MonoBehaviour
         locationList[currentLocationIndex].RemoveModel();
     }
 
-    public void ExitLocation()
-    {
-
-        DestroyModel();
-        isInLocation = false;
-        UIManager.ExitLocationSetUI();
-        ToggleLocationMarker(true);
-
-        Debug.Log("EXIT TRIGGERED");
-
-        currentLocationIndex = -1;
-
-    }
-
+  
     public LocationInformation GetLocationInfo(int index)
     {
         return locationList[index];
@@ -169,27 +168,28 @@ public class LocationManagerScript : MonoBehaviour
 
     public void ToggleLocationMarker(bool isMarkerEnabled)
     {
+
         for (int index = 0; index < locationMarkerList.Count; index++)
         {
-            SetModelRenderer(locationMarkerList[index], isMarkerCurrentlyEnabled);
+            SetModelRenderer(locationMarkerList[index], isMarkerEnabled);
             //locationMarkerList[index].SetActive(isMarkerEnabled);
         }
 
         isMarkerCurrentlyEnabled = isMarkerEnabled;
         UIManager.ToggleMarkerIcon(isMarkerEnabled);
 
-        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+       // Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
     }
 
     public void ToggleLocationMarker(int locationMarkerIndex, bool isMarkerEnabled)
     {
-        SetModelRenderer(locationMarkerList[locationMarkerIndex], isMarkerCurrentlyEnabled);
+        SetModelRenderer(locationMarkerList[locationMarkerIndex], isMarkerEnabled);
         //locationMarkerList[locationMarkerIndex].SetActive(isMarkerEnabled);
 
         isMarkerCurrentlyEnabled = isMarkerEnabled;
         UIManager.ToggleMarkerIcon(isMarkerEnabled);
 
-        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+        //Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
     }
 
     public void ToggleLocationMarker()
@@ -205,7 +205,7 @@ public class LocationManagerScript : MonoBehaviour
 
         UIManager.ToggleMarkerIcon(isMarkerCurrentlyEnabled);
 
-        Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
+        //Debug.Log("CURRENT MARKER: " + isMarkerCurrentlyEnabled);
 
     }
 

@@ -24,7 +24,7 @@ MonoBehaviour:
     Label: 
   attractionType: 0
   hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 0
+  disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: The memorial exhibits records and photos of the
     early era of Malay Sultanate. It also displays the journey of Malaysia from independence

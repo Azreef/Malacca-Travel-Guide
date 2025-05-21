@@ -22,7 +22,7 @@ MonoBehaviour:
     AltitudeMode: 2
     Label: 
   attractionType: 0
-  hotspotActivationRange: 7
+  hotspotActivationRange: 14
   disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: Saint Paul's Church is a historic church building

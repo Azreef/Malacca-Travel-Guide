@@ -23,7 +23,7 @@ MonoBehaviour:
     Label: 
   attractionType: 0
   hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 0
+  disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: Portuguese fortress built in Malacca, Malaysia,
     circa 1512. The oldest part of the fortress was a five-storey keep which eventually
