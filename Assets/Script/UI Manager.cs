@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Canvas attractionCanvas;
     public Canvas onLocationCanvas;
     public Canvas informationCanvas;
+    public Canvas toturialCanvas;
 
     [Header("Panels")]
     public GameObject navigationPanel;
@@ -62,6 +63,12 @@ public class UIManager : MonoBehaviour
         attractionCanvas.gameObject.SetActive(false);
         onLocationCanvas.gameObject.SetActive(false);
         informationCanvas.gameObject.SetActive(false);
+        toturialCanvas.gameObject.SetActive(false);
+    }
+
+    public void ShowToturialCanvas()
+    {
+        toturialCanvas.gameObject.SetActive(true);
     }
 
     public void ShowMenuCanvas()

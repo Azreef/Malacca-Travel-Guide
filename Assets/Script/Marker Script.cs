@@ -30,7 +30,6 @@ public class MarkerScript : MonoBehaviour
         locationManager.GetComponent<SetTargetLocation>().setTarget(locationIndex);
     }
 
-
     public void SetLocationInfo(int index)
     {
         locationManager = GameObject.FindWithTag("Manager").GetComponent<LocationManagerScript>();
@@ -52,7 +51,7 @@ public class MarkerScript : MonoBehaviour
         currentDistance = currentDistance * 1000;
 
 
-        if (currentDistance < activationRange && (locationManager.currentLocationIndex != locationIndex))
+        if (currentDistance < activationRange)
         {
             //Debug.Log()
             //triggeredInLocation = true;
@@ -60,6 +59,15 @@ public class MarkerScript : MonoBehaviour
             //Debug.Log("TRIGGER ENTER: " + markerText.text);
 
         }
+
+        //if (currentDistance < activationRange && (locationManager.currentLocationIndex != locationIndex))
+        //{
+        //    //Debug.Log()
+        //    //triggeredInLocation = true;
+        //    locationManager.EnterLocation(locationIndex);
+        //    //Debug.Log("TRIGGER ENTER: " + markerText.text);
+
+        //}
 
         else if (currentDistance >= activationRange && (locationManager.currentLocationIndex == locationIndex))
         {

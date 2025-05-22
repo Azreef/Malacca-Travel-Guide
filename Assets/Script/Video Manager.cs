@@ -11,18 +11,27 @@ using System.Linq;
 public class VideoManager : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
+    public VideoPlayer tutorialVideoPlayer;
 
     [Header("Buttons")]
     public Button playButton;
     public Button pauseButton;
     public Button nextButton;
     public Button previousButton;
+    public Button closeButton;
+
 
     private LocationInformation locationInformation;
 
     private List<VideoClip> currentVideoClipList;
     private int currentTrack;
 
+    public VideoClip tutorialVideo;
+
+    void Start()
+    {
+        tutorialVideoPlayer.clip = tutorialVideo;
+    }
 
     public void SetPlaylist(LocationInformation info )
     {
@@ -46,6 +55,28 @@ public class VideoManager : MonoBehaviour
 
         }
              
+    }
+    public void ReplayTutorialVideo()
+    {
+        tutorialVideoPlayer.Stop();
+        tutorialVideoPlayer.clip = tutorialVideo;
+        tutorialVideoPlayer.Play();
+    }
+    public void PauseTutorialVideo()
+    {
+        tutorialVideoPlayer.Pause();
+    }
+    public void ResumeTutorialVideo()
+    {
+        if (tutorialVideoPlayer.clip == null || tutorialVideoPlayer.clip == tutorialVideo)
+        {
+            tutorialVideoPlayer.clip = tutorialVideo;
+            tutorialVideoPlayer.Play();
+        }
+        else
+        {
+            tutorialVideoPlayer.Play();
+        }
     }
 
 
@@ -90,8 +121,6 @@ public class VideoManager : MonoBehaviour
     public void PauseVideo()
     {
         videoPlayer.Pause();
-
-
     }
 
     public void ResumeVideo()
