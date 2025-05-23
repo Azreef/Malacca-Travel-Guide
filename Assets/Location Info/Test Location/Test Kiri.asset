@@ -24,7 +24,14 @@ MonoBehaviour:
   hotspotActivationRange: 7
   disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
-  locationInformationDescription: Test Kiri Des
+  locationInformationDescription: 'Malacca Sultanate Palace Museum (Malay: Muzium
+    Istana Kesultanan Melaka) is a museum located in Malacca City, Malacca, Malaysia.
+    The building is a modern reconstruction of the palace of the Malacca Sultanate,
+    based on the information and data obtained from the Malay Annals. It is made
+    up of hardwood (for its structure), ''belian'' wood (for its roof) and wooden
+    pegs (instead of nails) and was constructed in 1984 and became a cultural museum
+    which showcases the history of the region. The museum was officially opened on
+    17 July 1986 by Prime Minister Mahathir Mohamad.'
   videoClipList:
   - {fileID: 32900000, guid: 64fdb4726b83cf0449841e22f9513196, type: 3}
   - {fileID: 32900000, guid: cd58120059736e14faab12c6dae7cff6, type: 3}

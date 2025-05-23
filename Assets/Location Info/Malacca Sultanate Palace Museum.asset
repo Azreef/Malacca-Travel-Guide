@@ -26,11 +26,19 @@ MonoBehaviour:
   hotspotActivationRange: 7
   disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
-  locationInformationDescription: The memorial exhibits records and photos of the
-    early era of Malay Sultanate. It also displays the journey of Malaysia from independence
-    and its modern development.
-  videoClipList: []
+  locationInformationDescription: 'Malacca Sultanate Palace Museum (Malay: Muzium
+    Istana Kesultanan Melaka) is a museum located in Malacca City, Malacca, Malaysia.
+    The building is a modern reconstruction of the palace of the Malacca Sultanate,
+    based on the information and data obtained from the Malay Annals. It is made
+    up of hardwood (for its structure), ''belian'' wood (for its roof) and wooden
+    pegs (instead of nails) and was constructed in 1984 and became a cultural museum
+    which showcases the history of the region. The museum was officially opened on
+    17 July 1986 by Prime Minister Mahathir Mohamad.'
+  videoClipList:
+  - {fileID: 32900000, guid: c35165346cd6e894e9bb6ac75b1a294e, type: 3}
+  - {fileID: 32900000, guid: 7fecc32066926cf4997495089c580ce6, type: 3}
+  - {fileID: 32900000, guid: eff382cdcf935b142b87184a1b269cc5, type: 3}
   locationImage: {fileID: 2800000, guid: 527642fff32a15240b7e35ed81f0ed91, type: 3}
-  locationInformationAudio: {fileID: 8300000, guid: 80e9e4ba7a276ac49a537b0e8d68aa15, type: 3}
+  locationInformationAudio: {fileID: 8300000, guid: 7cbdd50a7905e204883430ffe1e67797, type: 3}
   modelPrefab: {fileID: 8167396788476612330, guid: df47915199285c44cb2956bf88199c10, type: 3}
   markerPrefab: {fileID: 6841762367417827748, guid: 040cb4de30bfe064ba065447e151abda, type: 3}
