@@ -21,9 +21,9 @@ MonoBehaviour:
     AltitudeMode: 2
     Label: 
   attractionType: 0
-  hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 1
-  disableThisMarkerOnEnter: 1
+  hotspotActivationRange: 14
+  disableOtherMarkerOnEnter: 0
+  disableThisMarkerOnEnter: 0
   locationInformationDescription: 'Malacca Sultanate Palace Museum (Malay: Muzium
     Istana Kesultanan Melaka) is a museum located in Malacca City, Malacca, Malaysia.
     The building is a modern reconstruction of the palace of the Malacca Sultanate,

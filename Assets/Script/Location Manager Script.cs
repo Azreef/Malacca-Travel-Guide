@@ -20,7 +20,7 @@ public class LocationManagerScript : MonoBehaviour
     public VideoManager videoManager;
     public AudioManager audioManager;
     public SetTargetLocation setTarget;
-
+    private NotificationManager notificationManager;
 
     private bool isMarkerCurrentlyEnabled = true;
     public bool isInLocation = false;
@@ -28,8 +28,11 @@ public class LocationManagerScript : MonoBehaviour
     private List<GameObject> locationMarkerList = new List<GameObject>();
     private bool isInitializingLocation = false;
 
+    public GameObject modelTutoSplashScreen;
+
     void Start()
     {
+        notificationManager = GetComponent<NotificationManager>();
         Permission.RequestUserPermission(Permission.FineLocation);
         InitializeLocation();
 
@@ -109,6 +112,8 @@ public class LocationManagerScript : MonoBehaviour
 
             audioManager.SetInfoSound(locationList[currentLocationIndex].locationInformationAudio);
 
+            notificationManager.SpawnLocationNotification("Arriving at", locationList[currentLocationIndex].locationName, true);
+
             if (locationList[currentLocationIndex].disableThisMarkerOnEnter)
             {
                 ToggleLocationMarker(index, false);
@@ -127,7 +132,7 @@ public class LocationManagerScript : MonoBehaviour
 
     public void ExitLocation()
     {
-
+        notificationManager.SpawnLocationNotification("Leaving", locationList[currentLocationIndex].locationName, false);
         DestroyModel();
         isInLocation = false;
         UIManager.ExitLocationSetUI();
@@ -146,12 +151,13 @@ public class LocationManagerScript : MonoBehaviour
             double currentLongitude = Input.location.lastData.longitude;
 
             Location spawnModelLocation = new Location(currentLatitude, currentLongitude);
-
             locationList[currentLocationIndex].CreateModel(spawnModelLocation);
+            modelTutoSplashScreen.SetActive(true);
         }
         else if (locationList[currentLocationIndex].GetPlacedModel() != null)
         {
             locationList[currentLocationIndex].RemoveModel();
+            modelTutoSplashScreen.SetActive(false);
         }
     }
     public void DestroyModel()

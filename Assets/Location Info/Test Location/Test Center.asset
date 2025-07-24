@@ -15,15 +15,15 @@ MonoBehaviour:
   locationName: Center
   locationShortDescription: Center
   LocationCoodinates:
-    Latitude: 2.93206003285378
-    Longitude: 101.86172249569705
-    Altitude: 66
+    Latitude: 3.0562006
+    Longitude: 101.7417
+    Altitude: 138
     AltitudeMode: 2
     Label: 
   attractionType: 0
-  hotspotActivationRange: 7
-  disableOtherMarkerOnEnter: 1
-  disableThisMarkerOnEnter: 1
+  hotspotActivationRange: 20
+  disableOtherMarkerOnEnter: 0
+  disableThisMarkerOnEnter: 0
   locationInformationDescription: 'Malacca Sultanate Palace Museum (Malay: Muzium
     Istana Kesultanan Melaka) is a museum located in Malacca City, Malacca, Malaysia.
     The building is a modern reconstruction of the palace of the Malacca Sultanate,
@@ -33,6 +33,7 @@ MonoBehaviour:
     which showcases the history of the region. The museum was officially opened on
     17 July 1986 by Prime Minister Mahathir Mohamad.'
   videoClipList:
+  - {fileID: 32900000, guid: c35165346cd6e894e9bb6ac75b1a294e, type: 3}
   - {fileID: 32900000, guid: 86166fc16d87f834eb448287209b2e2c, type: 3}
   - {fileID: 32900000, guid: fba739bee256b5b4990f476a8f1fa180, type: 3}
   locationImage: {fileID: 2800000, guid: 9dee06e564fa4474fa33a399d9d6e924, type: 3}

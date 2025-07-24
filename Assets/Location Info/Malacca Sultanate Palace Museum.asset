@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationName: Malacca Sultanate Palace Museum
   locationShortDescription: The Sultanate Palace Museum, is a replica of the 15th-century
-    palace of Sultan Mansur Shah. This museum offers a glimpse into the grandeur
-    of the Melaka Sultanate with its detailed architecture and displays.
+    palace of Sultan Mansur Shah.
   LocationCoodinates:
     Latitude: 2.1921055
     Longitude: 102.2503577
@@ -23,7 +22,7 @@ MonoBehaviour:
     AltitudeMode: 2
     Label: 
   attractionType: 0
-  hotspotActivationRange: 7
+  hotspotActivationRange: 14
   disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1
   locationInformationDescription: 'Malacca Sultanate Palace Museum (Malay: Muzium

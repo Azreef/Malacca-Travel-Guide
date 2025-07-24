@@ -80,7 +80,7 @@ public class LocationInformation : ScriptableObject
         var groundHeight = placedModel.AddComponent<GroundHeight>();
         placedModel.transform.LookAt(arCamera.transform);
 
-        placedModel.AddComponent<LeanDragTranslate>();
+        //placedModel.AddComponent<LeanDragTranslate>();
         placedModel.AddComponent<LeanPinchScale>();
         placedModel.AddComponent<LeanTwistRotateAxis>();
 

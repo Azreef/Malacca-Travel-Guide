@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
 {
 
     public AudioClip clickSound;
+    public AudioClip arrivedSound;
+    public AudioClip exitSound;
+
     public AudioSource audioSource;
 
     private AudioClip infoSound;
@@ -43,6 +46,18 @@ public class AudioManager : MonoBehaviour
             audioSource.Play();
         }
 
+    }
+
+    public void PlayArrivingSound()
+    {
+        audioSource.clip = arrivedSound;
+        audioSource.Play();
+    }
+
+    public void PlayExitSound()
+    {
+        audioSource.clip = exitSound;
+        audioSource.Play();
     }
 
 }

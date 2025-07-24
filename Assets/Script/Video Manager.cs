@@ -4,9 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 using UnityEngine.Video;
 using System.Linq;
+using UnityEngine.UI;
 
 public class VideoManager : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class VideoManager : MonoBehaviour
     public Button previousButton;
     public Button closeButton;
 
-
     private LocationInformation locationInformation;
 
     private List<VideoClip> currentVideoClipList;
@@ -28,9 +28,21 @@ public class VideoManager : MonoBehaviour
 
     public VideoClip tutorialVideo;
 
+    public Slider videoSlider;
+    public Slider tutorialVideoSlider;
+    public bool isDraggingVideo = false;
+
     void Start()
     {
         tutorialVideoPlayer.clip = tutorialVideo;
+        
+        videoSlider.onValueChanged.AddListener(HandleVideoSliderValueChanged);
+        tutorialVideoSlider.onValueChanged.AddListener(HandleVideoSliderValueChanged);
+    }
+
+    void Update()
+    {
+        UpdateVideoSlider();
     }
 
     public void SetPlaylist(LocationInformation info )
@@ -47,6 +59,8 @@ public class VideoManager : MonoBehaviour
 
             currentTrack = 0;
             videoPlayer.clip = currentVideoClipList[currentTrack];
+
+            videoPlayer.Play();
 
         }
         else
@@ -140,4 +154,56 @@ public class VideoManager : MonoBehaviour
         videoPlayer.Stop();
     }
 
+    public void BeginDrag()
+    {
+        isDraggingVideo = true;
+    }
+
+    public void EndDrag()
+    {
+        isDraggingVideo = false;
+    }
+    
+    public void UpdateVideoSlider()
+    {
+        if (!isDraggingVideo)
+        {
+            if (videoPlayer.isActiveAndEnabled)
+            {
+                videoSlider.value = (float)videoPlayer.time;
+
+                if (videoSlider.maxValue != (float)videoPlayer.length)
+                {
+                    videoSlider.maxValue = (float)videoPlayer.length;
+                }
+            }
+            else if (tutorialVideoPlayer.isActiveAndEnabled)
+            {
+                tutorialVideoSlider.value = (float)tutorialVideoPlayer.time;
+
+                if (tutorialVideoSlider.maxValue != (float)tutorialVideoPlayer.length)
+                {
+                    tutorialVideoSlider.maxValue = (float)tutorialVideoPlayer.length;
+                }
+            }
+
+
+        }
+    }
+
+    public void HandleVideoSliderValueChanged(float value)
+    {
+        if (isDraggingVideo)
+        {
+            if(videoPlayer.isActiveAndEnabled)
+            {          
+                videoPlayer.time = value;
+            }
+            else if (tutorialVideoPlayer.isActiveAndEnabled)
+            {       
+                tutorialVideoPlayer.time = value;
+            }
+            
+        }
+    }
 }
