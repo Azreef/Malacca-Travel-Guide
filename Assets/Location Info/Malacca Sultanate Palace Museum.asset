@@ -16,12 +16,12 @@ MonoBehaviour:
   locationShortDescription: The Sultanate Palace Museum, is a replica of the 15th-century
     palace of Sultan Mansur Shah.
   LocationCoodinates:
-    Latitude: 2.1921055
-    Longitude: 102.2503577
+    Latitude: 2.192195
+    Longitude: 102.2504298
     Altitude: 10
     AltitudeMode: 2
     Label: 
-  attractionType: 0
+  attractionType: 1
   hotspotActivationRange: 14
   disableOtherMarkerOnEnter: 1
   disableThisMarkerOnEnter: 1

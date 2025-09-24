@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit"'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a583c9ae7c52a5945abbd844f61e4756, type: 2}
-  m_sharedMaterial: {fileID: 7318085540606381645, guid: a583c9ae7c52a5945abbd844f61e4756, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 58aeb7959008309498ed9cc57677e085, type: 2}
+  m_sharedMaterial: {fileID: -293203931286772073, guid: 58aeb7959008309498ed9cc57677e085, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -288,8 +288,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Location
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 458c457a1fceb9241bc4718c3032da02, type: 2}
-  m_sharedMaterial: {fileID: -4192299006950770427, guid: 458c457a1fceb9241bc4718c3032da02, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cbad0b117c604d64ba088f55a7685888, type: 2}
+  m_sharedMaterial: {fileID: 6672732924167264973, guid: cbad0b117c604d64ba088f55a7685888, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.9
+  m_fontSize: 30
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

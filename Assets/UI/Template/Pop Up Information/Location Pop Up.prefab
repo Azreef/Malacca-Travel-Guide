@@ -154,8 +154,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Malacca Palace Castle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a583c9ae7c52a5945abbd844f61e4756, type: 2}
-  m_sharedMaterial: {fileID: 7318085540606381645, guid: a583c9ae7c52a5945abbd844f61e4756, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cab2cf9355bb18b418a6dd0b080d3aa4, type: 2}
+  m_sharedMaterial: {fileID: 5088298934097938487, guid: cab2cf9355bb18b418a6dd0b080d3aa4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -457,8 +457,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You Have Arrived at
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c69d17f546224e04dad7474b84ac729f, type: 2}
-  m_sharedMaterial: {fileID: 1789519579757699268, guid: c69d17f546224e04dad7474b84ac729f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cbad0b117c604d64ba088f55a7685888, type: 2}
+  m_sharedMaterial: {fileID: 6672732924167264973, guid: cbad0b117c604d64ba088f55a7685888, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.9
+  m_fontSize: 30
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

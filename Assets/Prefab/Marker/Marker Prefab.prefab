@@ -152,6 +152,7 @@ MonoBehaviour:
   referenceDistance: 20
   minScale: 0.3
   maxScale: 1
+  useDynamicScale: 1
 --- !u!65 &-6526851917248446229
 BoxCollider:
   m_ObjectHideFlags: 0
